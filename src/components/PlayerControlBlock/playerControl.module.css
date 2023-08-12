@@ -1,0 +1,110 @@
+.player__controls {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  padding: 0 27px 0 31px;
+}
+
+.player__btn_prev,
+.player__btn_play,
+.player__btn_next,
+.player__btn_repeat,
+.player__btn_shuffle {
+  padding: 5px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.player__btn_prev {
+  margin-right: 23px;
+}
+
+.player__btn_prev_svg {
+  width: 15px;
+  height: 14px;
+}
+
+button,
+._btn {
+  cursor: pointer;
+}
+
+.player__btn_play {
+  margin-right: 23px;
+}
+
+.player__btn_play_svg {
+  width: 22px;
+  height: 20px;
+}
+
+.player__btn_next {
+  margin-right: 28px;
+}
+
+.player__btn_next_svg {
+  width: 15px;
+  height: 14px;
+  fill: inherit;
+}
+
+.player__btn_repeat {
+  margin-right: 24px;
+}
+
+.player__btn_repeat_svg {
+  width: 18px;
+  height: 12px;
+  fill: transparent;
+  stroke: var(--play-list-title);
+}
+
+.player__btn_shuffle {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.player__btn_shuffle_svg {
+  width: 19px;
+  height: 12px;
+  fill: transparent;
+  stroke: var(--play-list-title);
+}
+
+.player__btn_prev_svg path,
+.player__btn_play_svg path,
+.player__btn_next_svg path,
+.player__btn_prev_svg:active path,
+.player__btn_play_svg:active path,
+.player__btn_next_svg:active path {
+  fill: var(--player-btn-prev-next);
+}
+
+.player__btn_prev_svg:hover path,
+.player__btn_play_svg:hover path,
+.player__btn_next_svg:hover path {
+  fill: var(--player-btn-hover);
+}
+
+.player__btn_repeat path,
+.player__btn_shuffle path {
+  fill: var(--player-btn-repeat-shuffle);
+}
+
+.player__btn_repeat:hover path,
+.player__btn_shuffle:hover path {
+  fill: var(--player-btn-repeat-shuffle-hover);
+}
+
+.player__btn_repeat:active path,
+.player__btn_shuffle:active path {
+  fill: var(--main-text);
+}

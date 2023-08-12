@@ -1,0 +1,60 @@
+@import url('./var.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  font-family: StratosSkyeng, sans-serif;
+  cursor: pointer;
+}
+
+ul li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: StratosSkyeng;
+  src:
+    local('StratosSkyeng'),
+    local('StratosSkyeng'),
+    url('/public/fonts/StratosSkyeng.woff2') format('woff2'),
+    url('/public/fonts/StratosSkyeng.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: StratosSkyeng, sans-serif;
+  color: var(--main-text);
+  transition: color 0.5s ease;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #383838;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  max-width: 1920px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--container);
+  transition: background-color 0.5s ease;
+}
