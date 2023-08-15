@@ -41,9 +41,22 @@
   background-color: var(--burger-line);
 }
 
-.nav__menu {
+/* .nav__menu {
   display: block;
   visibility: visible;
+} */
+
+.menu__content {
+  position: absolute;
+  max-height: 0;
+  overflow: hidden;
+  transition: 1s ease max-height;
+  background-color: var(--main-nav);
+  z-index: 1;
+}
+
+.menu__content_show {
+  max-height: 220px;
 }
 
 .menu__list {

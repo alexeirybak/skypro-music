@@ -75,8 +75,10 @@ export function Nav() {
         <span className={styles.burger__line}></span>
         <span className={styles.burger__line}></span>
       </div>
-      {menuVisible && (
-      <div className={styles.nav__menu}>
+      
+      <div className={`${menuVisible ? styles.menu__content_show : ''} ${
+        styles.menu__content
+      }`}>
         <ul className={styles.menu__list}>
           <li className={styles.menu__item}>
             <a href='#' className={styles.menu__link}>
@@ -93,11 +95,11 @@ export function Nav() {
               Войти
             </a>
           </li>
-          
+          <SwitchTheme />
         </ul>
       </div>
-      )}
-      <SwitchTheme />
+     
+      
     </nav>
   );
 }
