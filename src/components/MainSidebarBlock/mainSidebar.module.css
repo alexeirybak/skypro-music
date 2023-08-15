@@ -82,3 +82,20 @@
   width: 100%;
   height: auto;
 }
+
+.skeleton__sidebar__img {
+  background-color: var(--title-track-img);
+  animation: blink 1s infinite alternate;
+  width: 250px;
+  height: 150px;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.2;
+  }
+}

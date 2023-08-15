@@ -39,7 +39,7 @@ export function SwitchTheme() {
         onChange={changeTheme}
       />
       <label htmlFor='switcher'>
-        <div>
+        <div className={styles.switcher__block}>
           {currentTheme === 'dark' ? (
             <svg className={styles.switcher_switcher}
               xmlns='http://www.w3.org/2000/svg'

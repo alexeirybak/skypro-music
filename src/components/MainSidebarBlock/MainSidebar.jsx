@@ -1,6 +1,6 @@
 import styles from './mainSidebar.module.css';
 
-export function MainSidebar() {
+export function MainSidebar({ isLoading }) {
   return (
     <div className={styles.main__sidebar}>
       <div className={styles.sidebar__personal}>
@@ -33,24 +33,33 @@ export function MainSidebar() {
       <div className={styles.sidebar__block}>
         <div className={styles.sidebar__list}>
           <div className={styles.sidebar__item}>
-            <a href='#' className={styles.sidebar__link}>
-              <img
-                className={styles.sidebar__img}
-                src='img/playlist01.png'
-                alt="day's playlist"
-              />
-            </a>
+            {isLoading ? (
+              <a href='#' className={styles.sidebar__link}>
+                <img
+                  className={styles.sidebar__img}
+                  src='img/playlist01.png'
+                  alt="day's playlist"
+                />
+              </a>
+            ) : (
+              <div className={styles.skeleton__sidebar__img}></div>
+            )}
           </div>
           <div className={styles.sidebar__item}>
-            <a className={styles.sidebar__link} href='#'>
-              <img
-                className={styles.sidebar__img}
-                src='img/playlist02.png'
-                alt="day's playlist"
-              />
-            </a>
+            {isLoading ? (
+              <a className={styles.sidebar__link} href='#'>
+                <img
+                  className={styles.sidebar__img}
+                  src='img/playlist02.png'
+                  alt="day's playlist"
+                />
+              </a>
+            ) : (
+              <div className={styles.skeleton__sidebar__img}></div>
+            )}
           </div>
           <div className={styles.sidebar__item}>
+          {isLoading ? (
             <a className={styles.sidebar__link} href='#'>
               <img
                 className={styles.sidebar__img}
@@ -58,6 +67,9 @@ export function MainSidebar() {
                 alt="day's playlist"
               />
             </a>
+            ) : (
+              <div className={styles.skeleton__sidebar__img}></div>
+            )}
           </div>
         </div>
       </div>

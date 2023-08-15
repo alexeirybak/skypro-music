@@ -3,12 +3,12 @@ import { SidebarCenterblock } from '../SidebarCenterblockBlock/SidebarCenterbloc
 import { MainSidebar } from '../MainSidebarBlock/MainSidebar';
 import styles from './main.module.css';
 
-export function Main() {
+export function Main({ isLoading }) {
   return (
     <main className={styles.main}>
       <Nav />
-      <SidebarCenterblock />
-      <MainSidebar />
+      <SidebarCenterblock isLoading={isLoading} />
+      <MainSidebar isLoading={isLoading}/>
     </main>
   );
 }

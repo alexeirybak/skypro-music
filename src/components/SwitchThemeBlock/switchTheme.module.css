@@ -6,6 +6,11 @@
   cursor: pointer;
 }
 
+.switcher__block {
+  width: 19px;
+  cursor: pointer;
+}
+
 .switcher_switcher {
   animation: animSwitcher 1s ease;
 }

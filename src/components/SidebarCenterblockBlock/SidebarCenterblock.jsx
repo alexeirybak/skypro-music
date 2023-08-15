@@ -3,7 +3,7 @@ import { Filter } from '../FilterBlock/Filter';
 import { Search } from '../SearchBlock/Search';
 import styles from './sidebarCenterblock.module.css';
 
-export function SidebarCenterblock() {
+export function SidebarCenterblock({ isLoading }) {
   return (
     <div className={styles.main__centerblock}>
       <Search />
@@ -34,7 +34,7 @@ export function SidebarCenterblock() {
             </svg>
           </div>
         </div>
-        <PlayList />
+        <PlayList isLoading={isLoading} />
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
+:root {
+  --list-menu: #b672ff;
+}
+
 :root[data-theme='dark'] {
   --wrapper: #383838;
   --main-text: #fff;
@@ -24,6 +28,8 @@
   --player-btn-repeat-shuffle-hover: #acacac;
   --like-active-fill: #696969;
   --like-active-stroke: #fff;
+  --scrollbar: #4b4949;
+  --scroll-thumb: #fff;
 }
 
 :root[data-theme='light'] {
@@ -43,7 +49,7 @@
   --bar-player-progress: #d9d9d9;
   --player-btn-prev-next: #b1b1b1;
   --track-play-img-bg: #4e4e4e;
-  --player-bg: fff;
+  --player-bg: #fff;
   --logo-letters: #000;
   --track-title-svg: #b1b1b1;
   --track-title-svg-bg: #f6f4f4;
@@ -52,4 +58,6 @@
   --player-btn-repeat-shuffle-hover: #707070;
   --like-active-fill: #ad61ff;
   --like-active-stroke: #ad61ff;
+  --scrollbar: #d9d9d9;
+  --scroll-thumb: #b1b1b1;
 }
