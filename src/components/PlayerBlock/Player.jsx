@@ -1,17 +1,17 @@
 import { BarPlayer } from '../BarPlayerBlock/BarPlayer';
 import { VolumeBlock } from '../VolumeBlockBlock/VolumeBlock';
-import styles from './player.module.css';
+import * as S from './styles';
 
 export function Player({ isLoading }) {
   return (
-    <div className={styles.bar}>
-      <div className={styles.bar__content}>
-        <div className={styles.bar__player_progress}></div>
-        <div className={styles.bar__player_block}>
+    <S.Bar>
+      <S.BarContent>
+        <S.BarPlayerProgress></S.BarPlayerProgress>
+        <S.BarPlayerBlock>
           <BarPlayer isLoading={isLoading} />
           <VolumeBlock />
-        </div>
-      </div>
-    </div>
+        </S.BarPlayerBlock>
+      </S.BarContent>
+    </S.Bar>
   );
 }

@@ -1,18 +1,17 @@
 import { Data } from '../../utils/data';
-import styles from './playList.module.css';
+import * as S from './styles'
 
 export function PlayList({ isLoading }) {
   const fullPlayList = Data.map((item, i) => {
     const { trackTitleLink, trackAuthorLink, trackAlbumLink, trackTimeText } =
       item;
     return (
-      <div key={i} className={styles.playlist__item}>
-        <div className={styles.playlist__track}>
-          <div className={styles.track__title}>
+      <S.PlaylistItem key={i}>
+        <S.PlaylistTrack>
+          <S.TrackTitle>
             <div>
               {isLoading ? (
-                <svg
-                  className={styles.track__title_image}
+                <S.TrackTitleImage
                   xmlns='http://www.w3.org/2000/svg'
                   width='51'
                   height='52'
@@ -38,47 +37,46 @@ export function PlayList({ isLoading }) {
                     ry='2'
                     stroke='#B1B1B1'
                   />
-                </svg>
+                </S.TrackTitleImage>
               ) : (
-                <div className={styles.skeleton_icon}></div>
+                <S.SkeletonIcon></S.SkeletonIcon>
               )}
             </div>
 
-            <div className={styles.track__title_block}>
+            <S.TrackTitleBlock>
             {isLoading ? (
-              <a className={styles.track__title_link} href='http://'>
+              <S.TrackTitleLink href='http://'>
                 {trackTitleLink.title}
-                <span className={styles.track__title_span}>
+                <span>
                   {trackTitleLink?.remark}
                 </span>
-              </a>
+              </S.TrackTitleLink>
               ) : (
-                <div className={styles.skeleton__track_title}></div>
+                <S.SkeletonTrackTitle></S.SkeletonTrackTitle>
               )}
-            </div>
-          </div>
+            </S.TrackTitleBlock>
+          </S.TrackTitle>
 
-          <div className={styles.track__author}>
+          <S.TrackAuthor>
           {isLoading ? (
-            <a className={styles.track__author_link} href='http://'>
+            <S.TrackAuthorLink href='http://'>
               {trackAuthorLink}
-            </a>
+            </S.TrackAuthorLink>
             ) : (
-              <div className={styles.skeleton__track_author}></div>
+              <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}
-          </div>
-          <div className={styles.track__album}>
+          </S.TrackAuthor>
+          <S.TrackAlbum>
           {isLoading ? (
-            <a className={styles.track__album_link} href='http://'>
+            <S.TrackAlbumLink href='http://'>
               {trackAlbumLink}
-            </a>
+            </S.TrackAlbumLink>
             ) : (
-              <div className={styles.skeleton__track_author}></div>
+              <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}
-          </div>
+          </S.TrackAlbum>
           <div>
-            <svg
-              className={styles.track__time_svg}
+            <S.TrackTimeSvg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
               height='14'
@@ -89,12 +87,12 @@ export function PlayList({ isLoading }) {
                 d='M8.34372 2.00669H8.36529C9.29718 1.19273 11.7563 -0.0832586 13.9565 1.51832C17.3111 3.96019 14.2458 9.25098 8.36529 12.751H8.34372M8.34378 2.00669H8.32221C7.39032 1.19273 4.93121 -0.0832586 2.73102 1.51832C-0.623552 3.96019 2.44172 9.25098 8.32221 12.751H8.34378'
                 stroke='#B1B1B1'
               />
-            </svg>
-            <span className={styles.track__time_text}>{trackTimeText}</span>
+            </S.TrackTimeSvg>
+            <S.TrackTimeText>{trackTimeText}</S.TrackTimeText>
           </div>
-        </div>
-      </div>
+        </S.PlaylistTrack>
+      </S.PlaylistItem>
     );
   });
-  return <div className={styles.content__playlist}>{fullPlayList}</div>;
+  return <S.ContentPlayList>{fullPlayList}</S.ContentPlayList>;
 }

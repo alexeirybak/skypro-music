@@ -1,4 +1,6 @@
-.bar__volume_block {
+import styled from 'styled-components';
+
+export const BarVolumeBlock = styled.div`
   width: auto;
   display: -webkit-box;
   display: flex;
@@ -6,9 +8,9 @@
   -ms-flex-align: center;
   align-items: center;
   padding: 0 92px 0 0;
-}
+`;
 
-.volume__content {
+export const VolumeContent = styled.div`
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -20,24 +22,26 @@
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
+`;
 
-.volume__image {
+export const VolumeImage = styled.div`
   width: 13px;
   height: 18px;
   margin-right: 17px;
-}
+`;
 
-.volume__svg {
+export const VolumeSvg = styled.svg`
   width: 13px;
   height: 18px;
   fill: transparent;
-}
+`;
 
-.volume__progress {
+export const VolumeProgress = styled.div`
   width: 109px;
-}
+  cursor: pointer;
+`;
 
-.volume__progress_line {
+export const VolumeProgressLine = styled.input`
   width: 109px;
-}
+  cursor: pointer;
+`;

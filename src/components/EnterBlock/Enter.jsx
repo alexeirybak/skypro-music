@@ -46,6 +46,7 @@ export function Enter() {
                 placeholder='Повторите пароль'
                 style={{
                   display: status ? 'block' : 'none',
+                  visibility: status ? 'visible' : 'hidden',
                 }}
               />
             </div>

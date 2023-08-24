@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div className='wrapper'>
-        {/* <Enter /> */}
+        <Enter />
         <div className='container'>
           <Main isLoading={isLoading} setIsLoading={setIsLoading} />
           <Player isLoading={isLoading} setIsLoading={setIsLoading} />

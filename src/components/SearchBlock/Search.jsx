@@ -1,11 +1,10 @@
-import styles from './search.module.css';
+import * as S from './styles'
 
 export function Search() {
   return (
-    <div className={styles.centerblock__search}>
-      <div className={styles.glass}>
-        <svg
-          className={styles.icon__search}
+    <S.CenterblockSearch>
+      <S.Glass>
+        <S.IconSearch
           xmlns='http://www.w3.org/2000/svg'
           width='13'
           height='13'
@@ -19,10 +18,9 @@ export function Search() {
             transform='rotate(-38.7469 6.48533 6.48477)'
             stroke='black'
           />
-        </svg>
-        <div className={styles.handle}>
-          <svg
-            className={styles.icon__search_handle}
+        </S.IconSearch>
+        <S.Handle>
+          <S.IconSearchHandle
             xmlns='http://www.w3.org/2000/svg'
             width='5'
             height='6'
@@ -34,15 +32,14 @@ export function Search() {
               stroke='black'
               strokeLinecap='round'
             />
-          </svg>
-        </div>
-      </div>
-      <input
-        className={styles.search__text}
+          </S.IconSearchHandle>
+        </S.Handle>
+      </S.Glass>
+      <S.SearchText
         type='search'
         placeholder='Поиск'
         name='search'
       />
-    </div>
+    </S.CenterblockSearch>
   );
 }

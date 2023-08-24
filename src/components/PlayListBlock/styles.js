@@ -1,10 +1,12 @@
-.playlist__item {
+import styled, { keyframes } from 'styled-components';
+
+export const PlaylistItem = styled.div`
   width: 100%;
   display: block;
   margin-bottom: 12px;
-}
+`;
 
-.playlist__track {
+export const PlaylistTrack = styled.div`
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -16,9 +18,9 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
+`;
 
-.track__title {
+export const TrackTitle = styled.div`
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
@@ -28,10 +30,9 @@
   -ms-flex-align: center;
   align-items: center;
   width: 447px;
-}
+`;
 
-.track__title_image,
-.skeleton_icon {
+export const TrackTitleImage = styled.svg`
   width: 51px;
   height: 51px;
   margin-right: 16px;
@@ -44,138 +45,118 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
+  rect {
+    fill: var(--track-title-svg-bg);
+  }
+  path {
+    stroke: var(--track-title-svg);
+  }
+  ellipse {
+    stroke: var(--track-title-svg);
+  }
+`;
 
-.track__title_block,
-.skeleton__track_title,
-.skeleton__track_author {
+const blink = keyframes`
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.2;
+    }
+  }`;
+
+export const SkeletonIcon = styled(TrackTitleImage)`
+  background-color: var(--title-track-img);
+  animation: ${blink} 1s infinite alternate;
+`;
+
+export const TrackTitleBlock = styled.div`
   width: 60%;
   height: 20px;
-}
+`;
 
-.skeleton__track_author {
+export const SkeletonTrackTitle = styled(TrackTitleBlock)`
+  background-color: var(--title-track-img);
+  animation: ${blink} 1s infinite alternate;
+`;
+
+export const SkeletonTrackAuthor = styled(TrackTitleBlock)`
   width: 100%;
   height: 20px;
-}
-
-.skeleton_icon,
-.skeleton__track_title,
-.skeleton__track_author {
   background-color: var(--title-track-img);
-  animation: blink 1s infinite alternate;
-}
+  animation: ${blink} 1s infinite alternate;
+`;
 
-@keyframes blink {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0.2;
-  }
-}
-
-.track__title_svg {
-  width: 18px;
-  height: 17px;
-  fill: transparent;
-}
-
-.track__title_image rect {
-  fill: var(--track-title-svg-bg);
-}
-
-.track__title_image path,
-.track__title_image ellipse {
-  stroke: var(--track-title-svg);
-}
-
-.track__title_link {
+export const TrackTitleLink = styled.a`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--main-text);
-}
+  span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--track-title-span);
+    margin-left: 6px;
+  }
+`;
 
-.track__title_span {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--track-title-span);
-  margin-left: 6px;
-}
-
-.track__author {
+export const TrackAuthor = styled.div`
   width: 321px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-}
+`;
 
-.track__author_link {
+export const TrackAuthorLink = styled.a`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--main-text);
   text-align: left;
-}
+`;
 
-.track__album {
+export const TrackAlbum = styled.div`
   width: 245px;
-}
+`;
 
-.track__album_link {
+export const TrackAlbumLink = styled.a`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: var(--play-list-title);
-}
+`;
 
-.track__time_svg {
+export const TrackTimeSvg = styled.svg`
   width: 14px;
   height: 12px;
   margin-right: 17px;
   fill: transparent;
-}
+  path {
+    stroke: var(--play-list-title);
+  }
+`;
 
-.track__time_svg path {
-  stroke: var(--play-list-title);
-}
-
-.track__time_text {
+export const TrackTimeText = styled.span`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   text-align: right;
   color: var(--play-list-title);
-}
+`;
 
-.content__playlist {
+export const ContentPlayList = styled.div`
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
   overflow-y: auto;
-}
-
-/* .content__playlist::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 75%,
-    #fff 100%
-  );
-} */
+`;
