@@ -52,23 +52,23 @@ const PlaylistTitleColMixin = css`
 
 export const Col01 = styled.div`
   width: 447px;
-  ${PlaylistTitleColMixin}
+  ${PlaylistTitleColMixin};
 `;
 
 export const Col02 = styled.div`
   width: 321px;
-  ${PlaylistTitleColMixin}
+  ${PlaylistTitleColMixin};
 `;
 
 export const Col03 = styled.div`
   width: 245px;
-  ${PlaylistTitleColMixin}
+  ${PlaylistTitleColMixin};
 `;
 
 export const Col04 = styled.div`
   width: 60px;
   text-align: end;
-  ${PlaylistTitleColMixin}
+  ${PlaylistTitleColMixin};
 `;
 
 export const PlaylisTitleSvg = styled.svg`

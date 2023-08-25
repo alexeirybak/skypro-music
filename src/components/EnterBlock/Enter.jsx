@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import styles from './enter.module.css';
+import * as S from './styles';
 
 export function Enter() {
   const [status, setStatus] = useState(localStorage.getItem('status') || false);
+  const [showEnterButton, setShowEnterButton] = useState(true);
 
   function changeStatus() {
     setStatus(true);
+    setShowEnterButton(false);
   }
 
   function showPlayer() {
-    alert('Регистрация успешно пройдена');
+    alert('Вы вошли');
   }
 
   useEffect(() => {
@@ -17,64 +19,41 @@ export function Enter() {
   }, [status]);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container_enter}>
-        <div className={styles.modal__block}>
-          <form className={styles.modal__form_login} action='#'>
+    <S.Wrapper>
+      <S.ContainerEnter>
+        <S.ModalBlock>
+          <S.ModalFormLogin action='#'>
             <a href='../'>
-              <div className={styles.modal__logo}>
-                <img src='../img/logo_modal.png' alt='logo' />
-              </div>
+              <img src='../img/logo_modal.png' alt='logo' />
             </a>
-            <div className={styles.modal__form_login_input}>
-              <input
-                className={styles.modal__input}
-                type='text'
-                name='login'
-                placeholder='Почта'
-              />
-              <input
-                className={styles.modal__input}
+            <S.ModalFormLoginInput>
+              <S.ModalInput type='text' name='login' placeholder='Почта' />
+              <S.ModalInput
                 type='password'
                 name='password'
                 placeholder='Пароль'
               />
-              <input
-                className={styles.modal__input}
-                type='password'
-                name='password'
-                placeholder='Повторите пароль'
-                style={{
-                  display: status ? 'block' : 'none',
-                  visibility: status ? 'visible' : 'hidden',
-                }}
-              />
-            </div>
-            <div className={styles.modal__form_login_buttons}>
-              <button
-                className={styles.modal__btn_enter}
-                onClick={showPlayer}
-                style={{
-                  display: status ? 'none' : 'block',
-                }}
-              >
-                <a href='../index.html'>Войти</a>
-              </button>
-
-              <button
-                className={
-                  status === false
-                    ? styles.modal__btn_signup
-                    : styles.modal__btn_enter
-                }
-                onClick={status ? showPlayer : changeStatus}
-              >
-                <a href='signup.html'>Зарегистрироваться</a>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+              {status && (
+                <S.ModalInputConfirmPassword
+                  type='password'
+                  name='password'
+                  placeholder='Повторите пароль'
+                />
+              )}
+            </S.ModalFormLoginInput>
+            <S.ModalFormLoginButtons>
+              {status ? '' : (
+                <S.ModalButtonEnter onClick={showPlayer}>
+                  Войти
+                </S.ModalButtonEnter>
+              )}
+              <S.ModalBtnSignup onClick={changeStatus} $status={status}>
+                Зарегистрироваться
+              </S.ModalBtnSignup>
+            </S.ModalFormLoginButtons>
+          </S.ModalFormLogin>
+        </S.ModalBlock>
+      </S.ContainerEnter>
+    </S.Wrapper>
   );
 }

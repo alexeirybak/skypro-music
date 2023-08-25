@@ -1,14 +1,13 @@
-import styles from './playerTrackPlay.module.css';
+import * as S from './styles';
 
 export function PlayerTrackPlay({ isLoading }) {
   return (
-    <div className={styles.player__track_play}>
-      <div className={styles.track_play__contain}>
+    <S.PlayerTrackPlay>
+      <S.TrackPlayerContain>
         {isLoading ? (
-          <div className={styles.track_play__image}>
+          <S.TrackPlayerImage>
             <div>
-              <svg
-                className={styles.track_play__svg}
+              <S.TrackPlaySvg
                 xmlns='http://www.w3.org/2000/svg'
                 width='51'
                 height='52'
@@ -34,35 +33,34 @@ export function PlayerTrackPlay({ isLoading }) {
                   ry='2'
                   stroke='#4E4E4E'
                 />
-              </svg>
+              </S.TrackPlaySvg>
             </div>
-          </div>
+          </S.TrackPlayerImage>
         ) : (
-          <div className={styles.skeleton_icon}></div>
+          <S.SkeletonIcon></S.SkeletonIcon>
         )}
         {isLoading ? (
-          <div className={styles.track_play__author}>
-            <a className={styles.track_play__author_link} href='http://'>
+          <S.TrackPlayAuthor>
+            <S.TrackPlayAuthorLink href='http://'>
               Ты та...
-            </a>
-          </div>
+            </S.TrackPlayAuthorLink>
+          </S.TrackPlayAuthor>
         ) : (
-          <div className={styles.skeleton_author}></div>
+          <S.SceletonAuthor></S.SceletonAuthor>
         )}
         {isLoading ? (
-          <div className={styles.track_play__album}>
-            <a className={styles.track_play__album_link} href='http://'>
+          <S.TrackPlayAlbum>
+            <S.TrackPlayAlbumLink href='http://'>
               Баста
-            </a>
-          </div>
+            </S.TrackPlayAlbumLink>
+          </S.TrackPlayAlbum>
         ) : (
-          <div className={styles.skeleton_album}></div>
+          <S.SceletonAlbum></S.SceletonAlbum>
         )}
-      </div>
-      <div className={styles.track_play__like_dis}>
-        <div className={`${styles.track_play__like} ${styles._btn_icon}`}>
-          <svg
-            className={styles.track_play__like_svg}
+      </S.TrackPlayerContain>
+      <S.TrackPlayLikesDisplay>
+        <S.TrackPlayLike>
+          <S.TrackPlayLikeSvg
             xmlns='http://www.w3.org/2000/svg'
             width='16'
             height='14'
@@ -77,11 +75,10 @@ export function PlayerTrackPlay({ isLoading }) {
               d='M7.99997 2.25572H8.02154C8.95343 1.44175 11.4125 0.165765 13.6127 1.76734C16.9673 4.20921 13.902 9.5 8.02154 13H7.99997M8.00003 2.25572H7.97846C7.04657 1.44175 4.58746 0.165765 2.38727 1.76734C-0.967302 4.20921 2.09797 9.5 7.97846 13H8.00003'
               stroke='white'
             />
-          </svg>
-        </div>
-        <div className={`${styles.track_play__dislike} ${styles._btn_icon}`}>
-          <svg
-            className={styles.track_play__dislike_svg}
+          </S.TrackPlayLikeSvg>
+        </S.TrackPlayLike>
+        <S.TrackPlayDislike>
+          <S.TrackPlayDislikeSvg
             xmlns='http://www.w3.org/2000/svg'
             width='16'
             height='15'
@@ -97,9 +94,9 @@ export function PlayerTrackPlay({ isLoading }) {
               stroke='white'
             />
             <path d='M1 1L15 13.5' stroke='white' />
-          </svg>
-        </div>
-      </div>
-    </div>
+          </S.TrackPlayDislikeSvg>
+        </S.TrackPlayDislike>
+      </S.TrackPlayLikesDisplay>
+    </S.PlayerTrackPlay>
   );
 }

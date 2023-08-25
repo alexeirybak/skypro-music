@@ -50,7 +50,7 @@ export const SearchText = styled.input`
   font-size: 16px;
   line-height: 24px;
   color: var(--main-text);
-  :placeholder {
+  &::placeholder {
     background-color: transparent;
     color: var(--main-text);
     font-style: normal;

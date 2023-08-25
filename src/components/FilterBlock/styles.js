@@ -99,19 +99,19 @@ const FilterContentMixin = css`
 export const FilterContent = styled.div`
   width: 248px;
   max-height: ${({ $isAuthorMenuOpen }) => ($isAuthorMenuOpen ? '305px' : '0')};
-  ${FilterContentMixin}
+  ${FilterContentMixin};
 `;
 
 export const FilterContentYear = styled.div`
   width: 144px;
   max-height: ${({ $isYearMenuOpen }) => ($isYearMenuOpen ? '305px' : '0')};
-  ${FilterContentMixin}
+  ${FilterContentMixin};
 `;
 
 export const FilterContentGenre = styled.div`
   max-height: ${({ $isGenreMenuOpen }) => ($isGenreMenuOpen ? '305px' : '0')};
   width: 248px;
-  ${FilterContentMixin}
+  ${FilterContentMixin};
 `;
 
 const FilterListMixin = css`
@@ -149,13 +149,13 @@ const FilterListMixin = css`
 `;
 
 export const FilterListMenu = styled.ul`
-  ${FilterListMixin}
+  ${FilterListMixin};
   width: 180px;
   height: 237px;
 `;
 
 export const FilterListMenuYear = styled.ul`
-  ${FilterListMixin}
+  ${FilterListMixin};
   width: 116px;
   height: 237px;
   align-items: center;

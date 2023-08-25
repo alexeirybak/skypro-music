@@ -71,8 +71,8 @@ export const SkeletonIcon = styled(TrackTitleImage)`
 `;
 
 export const TrackTitleBlock = styled.div`
-  width: 60%;
-  height: 20px;
+  width: 356px;
+  height: 19px;
 `;
 
 export const SkeletonTrackTitle = styled(TrackTitleBlock)`
@@ -81,8 +81,8 @@ export const SkeletonTrackTitle = styled(TrackTitleBlock)`
 `;
 
 export const SkeletonTrackAuthor = styled(TrackTitleBlock)`
-  width: 100%;
-  height: 20px;
+  width: 271px;
+  height: 19px;
   background-color: var(--title-track-img);
   animation: ${blink} 1s infinite alternate;
 `;
