@@ -9,7 +9,7 @@ export function PlayList({ isLoading }) {
       <S.PlaylistItem key={i}>
         <S.PlaylistTrack>
           <S.TrackTitle>
-            <div>
+            <S.TrackTitleComponent>
               {isLoading ? (
                 <S.TrackTitleImage
                   xmlns='http://www.w3.org/2000/svg'
@@ -41,7 +41,7 @@ export function PlayList({ isLoading }) {
               ) : (
                 <S.SkeletonIcon></S.SkeletonIcon>
               )}
-            </div>
+            </S.TrackTitleComponent>
 
             <S.TrackTitleBlock>
             {isLoading ? (
@@ -75,7 +75,7 @@ export function PlayList({ isLoading }) {
               <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}
           </S.TrackAlbum>
-          <div>
+          <S.TrackTimeComponent>
             <S.TrackTimeSvg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -89,7 +89,7 @@ export function PlayList({ isLoading }) {
               />
             </S.TrackTimeSvg>
             <S.TrackTimeText>{trackTimeText}</S.TrackTimeText>
-          </div>
+          </S.TrackTimeComponent>
         </S.PlaylistTrack>
       </S.PlaylistItem>
     );

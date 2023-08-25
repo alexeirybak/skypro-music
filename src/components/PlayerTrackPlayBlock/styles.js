@@ -38,6 +38,8 @@ export const TrackPlayerImage = styled.div`
   grid-area: image;
 `;
 
+export const TrackPlayerBlock = styled.div``
+
 export const TrackPlaySvg = styled.svg`
   rect {
     fill: var(--track-title-svg-bg);

@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components';
 
-const BtnMixin = css`
-  cursor: pointer;
-`;
-
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 100%;
@@ -40,6 +36,10 @@ export const ModalFormLogin = styled.form`
   align-items: center;
 `;
 
+export const ModalFormLoginLink = styled.a``
+
+export const ModalFormLoginImg = styled.img``
+
 export const ModalFormLoginInput = styled.div`
   width: 278px;
   margin: 0 auto;
@@ -68,32 +68,43 @@ export const ModalInput = styled.input`
 
 export const ModalInputConfirmPassword = styled(ModalInput)``;
 
+const BtnMixin = css`
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.054px;
+  font-variant-numeric: lining-nums proportional-nums;
+  border-radius: 6px;
+  cursor: pointer;
+`;
+
+
 export const ModalButtonEnter = styled.button`
-  ${BtnMixin}
+${BtnMixin};
   background-color: #580ea2;
   height: 52px;
-  border-radius: 6px;
   color: #fff;
-  cursor: pointer;
+
   &:hover {
     background-color: #3f007d;
   }
+
   &:active {
     background-color: #271a58;
   }
 `;
 
 export const ModalBtnSignup = styled.button`
+${BtnMixin};
   height: 52px;
   border: 1px solid #d0cece;
-  border-radius: 6px;
-  cursor: pointer;
   background-color: ${({ $status }) => ($status ? '#580ea2' : '#fff')};
   color: ${({ $status }) => ($status ? '#fff' : '#000')};
+
   &:hover {
     background-color: #3f007d;
     color: #fff;
   }
+
   &:active {
     background-color: #271a58;
     color: #fff;

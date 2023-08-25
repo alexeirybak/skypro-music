@@ -3,11 +3,9 @@ import * as S from './styles';
 
 export function Enter() {
   const [status, setStatus] = useState(localStorage.getItem('status') || false);
-  const [showEnterButton, setShowEnterButton] = useState(true);
 
   function changeStatus() {
     setStatus(true);
-    setShowEnterButton(false);
   }
 
   function showPlayer() {
@@ -23,9 +21,9 @@ export function Enter() {
       <S.ContainerEnter>
         <S.ModalBlock>
           <S.ModalFormLogin action='#'>
-            <a href='../'>
-              <img src='../img/logo_modal.png' alt='logo' />
-            </a>
+            <S.ModalFormLoginLink href='../'>
+              <S.ModalFormLoginImg src='../img/logo_modal.png' alt='logo' />
+            </S.ModalFormLoginLink>
             <S.ModalFormLoginInput>
               <S.ModalInput type='text' name='login' placeholder='Почта' />
               <S.ModalInput

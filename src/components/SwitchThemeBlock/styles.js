@@ -20,3 +20,9 @@ export const SwitcherSwitcher = styled.svg`
   animation: ${animSwitcher} 1s ease;
   cursor: pointer;
 `;
+
+export const SwitcherLabel = styled.label``
+
+export const SwitcherBlock = styled.div``
+
+export const SwitcherSwitcherLabel = styled.label``

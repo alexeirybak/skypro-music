@@ -32,6 +32,8 @@ export const TrackTitle = styled.div`
   width: 447px;
 `;
 
+export const TrackTitleComponent = styled.div``
+
 export const TrackTitleImage = styled.svg`
   width: 51px;
   height: 51px;
@@ -132,6 +134,8 @@ export const TrackAlbumLink = styled.a`
   line-height: 24px;
   color: var(--play-list-title);
 `;
+
+export const TrackTimeComponent = styled.div``
 
 export const TrackTimeSvg = styled.svg`
   width: 14px;

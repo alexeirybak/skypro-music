@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../../styles/global.css';
+import '../../styles/global.js';
 import * as S from './styles';
 
 export function SwitchTheme() {
@@ -17,7 +17,7 @@ export function SwitchTheme() {
       setCurrentTheme('dark');
     }
   }
-  
+
   useEffect(() => {
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -29,7 +29,7 @@ export function SwitchTheme() {
   }, []);
 
   return (
-    <label>
+    <S.SwitcherLabel>
       <S.Switcher
         type='checkbox'
         id='switcher'
@@ -37,8 +37,8 @@ export function SwitchTheme() {
         checked={currentTheme === 'dark'}
         onChange={changeTheme}
       />
-      <label htmlFor='switcher'>
-        <div>
+      <S.SwitcherSwitcherLabel htmlFor='switcher'>
+        <S.SwitcherBlock>
           {currentTheme === 'dark' ? (
             <S.SwitcherSwitcher
               xmlns='http://www.w3.org/2000/svg'
@@ -100,9 +100,8 @@ export function SwitchTheme() {
               <circle cx='19.5576' cy='20.375' r='19' stroke='black' />
             </S.SwitcherSwitcher>
           )}
-        </div>
-      </label>
-    </label>
+        </S.SwitcherBlock>
+      </S.SwitcherSwitcherLabel>
+    </S.SwitcherLabel>
   );
 }
-

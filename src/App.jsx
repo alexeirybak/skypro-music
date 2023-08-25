@@ -3,14 +3,13 @@ import { Main } from './components/MainBlock/Main';
 import { Player } from './components/PlayerBlock/Player';
 import { Footer } from './components/FooterBlock/Footer';
 import { Enter } from './components/EnterBlock/Enter';
-import './styles/normalize.css';
-import './styles/global.css';
+import { GlobalStyle } from './styles/global';
 import { setTheme } from './utils/theme';
+import * as S from './styles/styles'
 
 setTheme();
 
 function App() {
-
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -23,17 +22,17 @@ function App() {
     }
   }, [isLoading]);
 
-
   return (
     <>
-      <div className='wrapper'>
+      <GlobalStyle />
+      <S.Wrapper>
         <Enter />
-        <div className='container'>
+        <S.Container>
           <Main isLoading={isLoading} setIsLoading={setIsLoading} />
           <Player isLoading={isLoading} setIsLoading={setIsLoading} />
           <Footer />
-        </div>
-      </div>
+        </S.Container>
+      </S.Wrapper>
     </>
   );
 }

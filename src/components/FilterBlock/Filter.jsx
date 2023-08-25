@@ -48,9 +48,9 @@ export function Filter() {
           <S.FilterBlock>
             <S.FilterListMenu>
               {authorList.map((item) => (
-                <li key={item}>
-                  <a href='#'>{item}</a>
-                </li>
+                <S.FilterListMenuItem key={item}>
+                  <S.FilterListMenuLink href='#'>{item}</S.FilterListMenuLink>
+                </S.FilterListMenuItem>
               ))}
             </S.FilterListMenu>
           </S.FilterBlock>
@@ -72,9 +72,9 @@ export function Filter() {
           <S.FilterBlock>
             <S.FilterListMenuYear>
               {yearList.map((item) => (
-                <li key={item}>
-                  <a href='#'>{item}</a>
-                </li>
+                <S.FilterListMenuItem key={item}>
+                  <S.FilterListMenuLink href='#'>{item}</S.FilterListMenuLink>
+                </S.FilterListMenuItem>
               ))}
             </S.FilterListMenuYear>
           </S.FilterBlock>
@@ -96,9 +96,9 @@ export function Filter() {
           <S.FilterBlock>
             <S.FilterListMenu>
               {genreList.map((item) => (
-                <li key={item}>
-                  <a href='#'>{item}</a>
-                </li>
+                <S.FilterListMenuItem key={item}>
+                  <S.FilterListMenuLink href='#'>{item}</S.FilterListMenuLink>
+                </S.FilterListMenuItem>
               ))}
             </S.FilterListMenu>
           </S.FilterBlock>

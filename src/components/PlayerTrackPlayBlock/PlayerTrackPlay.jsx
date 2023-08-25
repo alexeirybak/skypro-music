@@ -6,7 +6,7 @@ export function PlayerTrackPlay({ isLoading }) {
       <S.TrackPlayerContain>
         {isLoading ? (
           <S.TrackPlayerImage>
-            <div>
+            <S.TrackPlayerBlock>
               <S.TrackPlaySvg
                 xmlns='http://www.w3.org/2000/svg'
                 width='51'
@@ -34,7 +34,7 @@ export function PlayerTrackPlay({ isLoading }) {
                   stroke='#4E4E4E'
                 />
               </S.TrackPlaySvg>
-            </div>
+            </S.TrackPlayerBlock>
           </S.TrackPlayerImage>
         ) : (
           <S.SkeletonIcon></S.SkeletonIcon>
