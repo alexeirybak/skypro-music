@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './styles';
 
-export function Enter() {
+export function Login() {
   const [status, setStatus] = useState(localStorage.getItem('status') || false);
 
   function changeStatus() {
