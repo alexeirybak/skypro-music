@@ -131,7 +131,7 @@ const FilterListMixin = css`
   }
   a:active,
   a:hover {
-    color: var(--list-menu);
+    color: #b672ff;
     text-decoration: underline;
     transition: color 0.3s ease;
   }

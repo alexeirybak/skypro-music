@@ -4,6 +4,7 @@ import * as S from './styles';
 
 export function Nav() {
   const [menuVisible, setMenuVisible] = useState(false);
+  
 
   const menuAppear = () => {
     setMenuVisible(!menuVisible);

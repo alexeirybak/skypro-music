@@ -3,6 +3,7 @@ import { SidebarCenterblock } from '../SidebarCenterblockBlock/SidebarCenterbloc
 import { MainSidebar } from '../MainSidebarBlock/MainSidebar';
 import * as S from './styles.js';
 
+
 export function Main({ isLoading }) {
   return (
     <S.Main>

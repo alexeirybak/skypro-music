@@ -1,5 +1,5 @@
 import { Data } from '../../utils/data';
-import * as S from './styles'
+import * as S from './styles';
 
 export function PlayList({ isLoading }) {
   const fullPlayList = Data.map((item, i) => {
@@ -44,13 +44,11 @@ export function PlayList({ isLoading }) {
             </S.TrackTitleComponent>
 
             <S.TrackTitleBlock>
-            {isLoading ? (
-              <S.TrackTitleLink href='http://'>
-                {trackTitleLink.title}
-                <span>
-                  {trackTitleLink?.remark}
-                </span>
-              </S.TrackTitleLink>
+              {isLoading ? (
+                <S.TrackTitleLink href='http://'>
+                  {trackTitleLink.title}
+                  <span>{trackTitleLink?.remark}</span>
+                </S.TrackTitleLink>
               ) : (
                 <S.SkeletonTrackTitle></S.SkeletonTrackTitle>
               )}
@@ -58,19 +56,19 @@ export function PlayList({ isLoading }) {
           </S.TrackTitle>
 
           <S.TrackAuthor>
-          {isLoading ? (
-            <S.TrackAuthorLink href='http://'>
-              {trackAuthorLink}
-            </S.TrackAuthorLink>
+            {isLoading ? (
+              <S.TrackAuthorLink href='http://'>
+                {trackAuthorLink}
+              </S.TrackAuthorLink>
             ) : (
               <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}
           </S.TrackAuthor>
           <S.TrackAlbum>
-          {isLoading ? (
-            <S.TrackAlbumLink href='http://'>
-              {trackAlbumLink}
-            </S.TrackAlbumLink>
+            {isLoading ? (
+              <S.TrackAlbumLink href='http://'>
+                {trackAlbumLink}
+              </S.TrackAlbumLink>
             ) : (
               <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}

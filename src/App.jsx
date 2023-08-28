@@ -1,10 +1,11 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Main } from './components/MainBlock/Main';
 import { Player } from './components/PlayerBlock/Player';
 import { Footer } from './components/FooterBlock/Footer';
 import { Enter } from './components/EnterBlock/Enter';
-import { GlobalStyle } from './styles/global';
 import { setTheme } from './utils/theme';
+import { GlobalStyle } from './styles/global';
 import * as S from './styles/styles'
 
 setTheme();
@@ -16,9 +17,9 @@ function App() {
     if (!isLoading) {
       const timeout = setTimeout(() => {
         setIsLoading(true);
-      }, 5000);
+      }, 2000);
 
-      return () => clearTimeout(timeout); // Очищаю перед размонтом
+      return () => clearTimeout(timeout);
     }
   }, [isLoading]);
 

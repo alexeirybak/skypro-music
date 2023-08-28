@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const MainNav = styled.nav`
   width: 244px;
   background-color: var(--main-nav);
-  padding: 20px 0 20px 36px;
   transition: background-color 0.5s ease;
+  padding: 20px 0 20px 36px;
 `;
 
 export const NavLogo = styled.div`
