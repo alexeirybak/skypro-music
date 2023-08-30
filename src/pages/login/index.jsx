@@ -1,7 +1,7 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 import * as S from './styles';
 
-export function Login({ onAuthButtonClick }) {
+export const Login = ({ onAuthButtonClick }) => {
   return (
     <S.Wrapper>
       <S.ContainerEnter>
@@ -31,4 +31,4 @@ export function Login({ onAuthButtonClick }) {
       </S.ContainerEnter>
     </S.Wrapper>
   );
-}
+};

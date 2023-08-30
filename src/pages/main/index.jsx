@@ -19,7 +19,7 @@ export const Main = () => {
   return (
     <S.Wrapper>
       <S.Container>
-        <NavTrackSidebar isLoading={isLoading} />
+        <NavTrackSidebar isLoading={isLoading}/>
         <Player isLoading={isLoading} />
         <Footer />
       </S.Container>

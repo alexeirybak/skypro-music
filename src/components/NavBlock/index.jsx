@@ -5,8 +5,12 @@ import cn from 'classnames';
 import './index.css';
 import * as S from './styles';
 
-export const Nav = ({ onAuthButtonClick }) => {
+export const Nav = () => {
   const [menuVisible, setMenuVisible] = useState(false);
+
+const handleLogout = () => {
+  localStorage.setItem('user', 'false');
+};
 
   const menuAppear = () => {
     setMenuVisible(!menuVisible);
@@ -106,7 +110,7 @@ export const Nav = ({ onAuthButtonClick }) => {
           </S.MenuItem>
           <S.MenuItem>
             <NavLink to='/login'>
-              <S.MenuLink href='../signin.html' onClick={onAuthButtonClick}>
+              <S.MenuLink href='../signin.html' onClick={handleLogout}>
                 Выйти
               </S.MenuLink>
             </NavLink>

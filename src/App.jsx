@@ -16,7 +16,10 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <AppRoutes user={user} onAuthButtonClick={handleLogin} />
+      <AppRoutes
+        user={user}
+        onAuthButtonClick={handleLogin}
+      />
     </>
   );
 }
