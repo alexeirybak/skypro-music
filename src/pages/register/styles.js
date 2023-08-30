@@ -36,9 +36,9 @@ export const ModalFormLogin = styled.form`
   align-items: center;
 `;
 
-export const ModalFormLoginLink = styled.a``;
+export const ModalFormLoginLink = styled.a``
 
-export const ModalFormLoginImg = styled.img``;
+export const ModalFormLoginImg = styled.img``
 
 export const ModalFormLoginInput = styled.div`
   width: 278px;
@@ -66,6 +66,8 @@ export const ModalInput = styled.input`
   }
 `;
 
+export const ModalInputConfirmPassword = styled(ModalInput)``;
+
 const BtnMixin = css`
   font-size: 18px;
   line-height: 24px;
@@ -75,8 +77,9 @@ const BtnMixin = css`
   cursor: pointer;
 `;
 
+
 export const ModalButtonEnter = styled.button`
-  ${BtnMixin};
+${BtnMixin};
   background-color: #580ea2;
   height: 52px;
   color: #fff;
@@ -91,12 +94,11 @@ export const ModalButtonEnter = styled.button`
 `;
 
 export const ModalBtnSignup = styled.button`
-  ${BtnMixin};
-  width: 278px;
+${BtnMixin};
   height: 52px;
   border: 1px solid #d0cece;
-  background-color: ${({ $status }) => ($status ? '#580ea2' : '#fff')};
-  color: ${({ $status }) => ($status ? '#fff' : '#000')};
+  background-color: #580ea2;
+  color: #fff;
 
   &:hover {
     background-color: #3f007d;

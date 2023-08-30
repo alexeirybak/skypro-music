@@ -1,4 +1,6 @@
-import * as S from './styles'
+import { NavLink } from 'react-router-dom';
+import { musicCategory } from '../../constants';
+import * as S from './styles';
 
 export function MainSidebar({ isLoading }) {
   return (
@@ -18,53 +20,25 @@ export function MainSidebar({ isLoading }) {
             strokeLinecap='round'
             strokeLinejoin='round'
           />
-          <circle
-            cx='20'
-            cy='20'
-            r='19.5'
-            stroke='black'
-          />
+          <circle cx='20' cy='20' r='19.5' stroke='black' />
         </S.SidebarIcon>
       </S.SidebarPersonal>
 
       <S.SidebarBlock>
         <S.SidebarList>
-          <S.SidebarItem>
-            {isLoading ? (
-              <S.SidebarLink href='#'>
-                <S.SidebarImg
-                  src='img/playlist01.png'
-                  alt="day's playlist"
-                />
-              </S.SidebarLink>
-            ) : (
-              <S.SleketonSidebarImg></S.SleketonSidebarImg>
-            )}
-          </S.SidebarItem>
-          <S.SidebarItem>
-            {isLoading ? (
-              <S.SidebarLink href='#'>
-                <S.SidebarImg
-                  src='img/playlist02.png'
-                  alt="day's playlist"
-                />
-              </S.SidebarLink>
-            ) : (
-              <S.SleketonSidebarImg></S.SleketonSidebarImg>
-            )}
-          </S.SidebarItem>
-          <S.SidebarItem>
-          {isLoading ? (
-            <S.SidebarLink href='#'>
-              <S.SidebarImg
-                src='img/playlist03.png'
-                alt="day's playlist"
-              />
-            </S.SidebarLink>
-            ) : (
-              <S.SleketonSidebarImg></S.SleketonSidebarImg>
-            )}
-          </S.SidebarItem>
+          {musicCategory.map((category) => (
+            <S.SidebarItem key={category.id}>
+              {isLoading ? (
+                <NavLink
+                  to={`/category/${category.id}`}
+                >
+                  <S.SidebarImg src={category.imgUrl} alt={category.alt} />
+                </NavLink>
+              ) : (
+                <S.SleketonSidebarImg />
+              )}
+            </S.SidebarItem>
+          ))}
         </S.SidebarList>
       </S.SidebarBlock>
     </S.MainSidebar>

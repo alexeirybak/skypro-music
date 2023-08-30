@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Data } from '../../utils/data';
+import { Data } from '../../constants';
 import * as S from './styles';
 
 export function Filter() {

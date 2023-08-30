@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { SwitchTheme } from '../SwitchThemeBlock/SwitchTheme';
+import cn from 'classnames';
+import './index.css';
 import * as S from './styles';
 
 export function Nav() {
@@ -9,10 +11,13 @@ export function Nav() {
   const menuAppear = () => {
     setMenuVisible(!menuVisible);
   };
+
+  const activeClassName = 'underline';
+
   return (
     <S.MainNav>
       <S.NavLogo>
-        <Link to='/'>
+        <NavLink to='/'>
           <S.LogoImage
             id='btn-menu'
             xmlns='http://www.w3.org/2000/svg'
@@ -65,7 +70,7 @@ export function Nav() {
               fill='black'
             />
           </S.LogoImage>
-        </Link>
+        </NavLink>
       </S.NavLogo>
       <S.NavBurger onClick={menuAppear}>
         <S.BurgerLine></S.BurgerLine>
@@ -76,19 +81,33 @@ export function Nav() {
       <S.MenuContent $menuVisible={menuVisible}>
         <S.MenuList>
           <S.MenuItem>
-            <Link to='/'>
+            <NavLink
+              to='/'
+              className={({ isActive }) =>
+                cn({
+                  [activeClassName]: isActive,
+                })
+              }
+            >
               <S.MenuLink href='#'>Главное</S.MenuLink>
-            </Link>
+            </NavLink>
           </S.MenuItem>
           <S.MenuItem>
-            <Link to='/favourites'>
+            <NavLink
+              to='/favourites'
+              className={({ isActive }) =>
+                cn({
+                  [activeClassName]: isActive,
+                })
+              }
+            >
               <S.MenuLink href='#'>Мой плейлист</S.MenuLink>
-            </Link>
+            </NavLink>
           </S.MenuItem>
           <S.MenuItem>
-            <Link to='/login'>
+            <NavLink to='/login'>
               <S.MenuLink href='../signin.html'>Выйти</S.MenuLink>
-            </Link>
+            </NavLink>
           </S.MenuItem>
         </S.MenuList>
       </S.MenuContent>

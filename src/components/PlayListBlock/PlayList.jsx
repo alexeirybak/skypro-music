@@ -1,4 +1,4 @@
-import { Data } from '../../utils/data';
+import { Data } from '../../constants';
 import * as S from './styles';
 
 export function PlayList({ isLoading }) {

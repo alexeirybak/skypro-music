@@ -8,7 +8,7 @@ export const Data = [
     trackAlbumLink: 'Welcome Reality',
     trackTimeText: '4:44',
     year: 2023,
-    genre: 'Хип-хоп'
+    genre: 'Хип-хоп',
   },
   {
     trackTitleLink: {
@@ -19,7 +19,7 @@ export const Data = [
     trackAlbumLink: 'Elektro',
     trackTimeText: '2:22',
     year: 2022,
-    genre: 'Поп-музыка'
+    genre: 'Поп-музыка',
   },
   {
     trackTitleLink: {
@@ -30,7 +30,7 @@ export const Data = [
     trackAlbumLink: 'I’m Fire',
     trackTimeText: '2:22',
     year: 2021,
-    genre: 'Техно'
+    genre: 'Техно',
   },
   {
     trackTitleLink: {
@@ -41,7 +41,7 @@ export const Data = [
     trackAlbumLink: 'Non Stop',
     trackTimeText: '4:12',
     year: 2020,
-    genre: 'Инди'
+    genre: 'Инди',
   },
   {
     trackTitleLink: {
@@ -52,7 +52,7 @@ export const Data = [
     trackAlbumLink: 'Run Run',
     trackTimeText: '2:54',
     year: 2019,
-    genre: 'Рок'
+    genre: 'Рок',
   },
   {
     trackTitleLink: {
@@ -63,7 +63,7 @@ export const Data = [
     trackAlbumLink: 'Eyes on Fire',
     trackTimeText: '5:20',
     year: 2023,
-    genre: 'Из кино'
+    genre: 'Из кино',
   },
   {
     trackTitleLink: {
@@ -74,7 +74,7 @@ export const Data = [
     trackAlbumLink: 'Mucho Bien',
     trackTimeText: '3:41',
     year: 2022,
-    genre: 'Нью-эйдж'
+    genre: 'Нью-эйдж',
   },
   {
     trackTitleLink: {
@@ -85,7 +85,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2021,
-    genre: 'Классика'
+    genre: 'Классика',
   },
   {
     trackTitleLink: {
@@ -96,7 +96,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2020,
-    genre: 'Поп-музыка'
+    genre: 'Поп-музыка',
   },
   {
     trackTitleLink: {
@@ -107,7 +107,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2019,
-    genre: 'Рок'
+    genre: 'Рок',
   },
   {
     trackTitleLink: {
@@ -118,7 +118,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2017,
-    genre: 'Танцевальная'
+    genre: 'Танцевальная',
   },
   {
     trackTitleLink: {
@@ -129,7 +129,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2022,
-    genre: 'Хип-хоп'
+    genre: 'Хип-хоп',
   },
   {
     trackTitleLink: {
@@ -140,7 +140,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2018,
-    genre: 'Из кино'
+    genre: 'Из кино',
   },
   {
     trackTitleLink: {
@@ -151,7 +151,7 @@ export const Data = [
     trackAlbumLink: 'Captivating',
     trackTimeText: '1:48',
     year: 2020,
-    genre: 'Нью-эйдж'
+    genre: 'Нью-эйдж',
   },
   {
     trackTitleLink: {
@@ -162,7 +162,7 @@ export const Data = [
     trackAlbumLink: 'How Deep Is Your Love',
     trackTimeText: '3:32',
     year: 2019,
-    genre: 'Техно'
+    genre: 'Техно',
   },
   {
     trackTitleLink: {
@@ -173,6 +173,24 @@ export const Data = [
     trackAlbumLink: 'Soundz Made in Romania',
     trackTimeText: '3:36',
     year: 2023,
-    genre: 'Рок'
-  }
+    genre: 'Рок',
+  },
+];
+
+export const musicCategory = [
+  {
+    id: 1,
+    imgUrl: './../img/playlist01.png',
+    alt: "Плейлист дня",
+  },
+  {
+    id: 2,
+    imgUrl: './../img/playlist02.png',
+    alt: "100 танцевальных хитов",
+  },
+  {
+    id: 3,
+    imgUrl: './../img/playlist03.png',
+    alt: "Инди-заряд",
+  },
 ];

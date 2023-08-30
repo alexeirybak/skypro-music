@@ -47,7 +47,7 @@ export const BurgerLine = styled.span`
 export const MenuContent = styled.div`
   max-height: 0;
   overflow: hidden;
-  transition: 1s ease max-height;
+  transition: 0.5s ease max-height;
   background-color: var(--main-nav);
   z-index: 1;
   max-height: ${({ $menuVisible }) => ($menuVisible ? '220px' : '0')};

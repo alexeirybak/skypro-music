@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom'
 import * as S from './styles';
 
-export function Login({ onAuthButtonClick }) {
+export function Register() {
+
   return (
     <S.Wrapper>
       <S.ContainerEnter>
@@ -18,14 +17,16 @@ export function Login({ onAuthButtonClick }) {
                 name='password'
                 placeholder='Пароль'
               />
+                <S.ModalInputConfirmPassword
+                  type='password'
+                  name='password'
+                  placeholder='Повторите пароль'
+                />
             </S.ModalFormLoginInput>
             <S.ModalFormLoginButtons>
-              <S.ModalButtonEnter onClick={onAuthButtonClick}>
-                Войти
-              </S.ModalButtonEnter>
-              <NavLink to='/register'>
-                <S.ModalBtnSignup>Зарегистрироваться</S.ModalBtnSignup>
-              </NavLink>
+              <S.ModalBtnSignup>
+                Зарегистрироваться
+              </S.ModalBtnSignup>
             </S.ModalFormLoginButtons>
           </S.ModalFormLogin>
         </S.ModalBlock>

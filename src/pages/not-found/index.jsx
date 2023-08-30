@@ -1,7 +1,10 @@
+import * as S from './styles';
+
 export const NotFound = () => {
   return (
-    <div>
-      <h1>Страница не найдена</h1>;
-    </div>
+    <S.Block404>
+      <S.Img src='/img/404.gif' />
+      <S.Sign>Пестни чё-та нету! <br></br>Ашипка 404 ((</S.Sign>
+    </S.Block404>
   );
 };

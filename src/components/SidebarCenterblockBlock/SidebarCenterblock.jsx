@@ -3,7 +3,7 @@ import { Filter } from '../FilterBlock/Filter';
 import { Search } from '../SearchBlock/Search';
 import * as S from './styles'
 
-export function SidebarCenterblock({ isLoading }) {
+export function SidebarCenterBlock({ isLoading }) {
   return (
     <S.MainCenterBlock>
       <Search />
