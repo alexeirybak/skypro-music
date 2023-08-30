@@ -1,9 +1,9 @@
-import { PlayList } from '../PlayListBlock/PlayList';
-import { Filter } from '../FilterBlock/Filter';
-import { Search } from '../SearchBlock/Search';
+import { PlayList } from '../PlayListBlock';
+import { Filter } from '../FilterBlock';
+import { Search } from '../SearchBlock';
 import * as S from './styles'
 
-export function SidebarCenterBlock({ isLoading }) {
+export const SidebarCenterBlock = ({ isLoading }) => {
   return (
     <S.MainCenterBlock>
       <Search />

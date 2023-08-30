@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-export function Search() {
+export const Search = () => {
   return (
     <S.CenterblockSearch>
       <S.Glass>

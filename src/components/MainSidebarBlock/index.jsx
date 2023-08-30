@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { musicCategory } from '../../constants';
 import * as S from './styles';
 
-export function MainSidebar({ isLoading }) {
+export const MainSidebar = ({ isLoading }) => {
   return (
     <S.MainSidebar>
       <S.SidebarPersonal>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Data } from '../../constants';
 import * as S from './styles';
 
-export function Filter() {
+export const Filter = () => {
   const authorList = [...new Set(Data.map((item) => item.trackAuthorLink))];
   const yearList = [...new Set(Data.map((item) => item.year))];
   const genreList = [...new Set(Data.map((item) => item.genre))];

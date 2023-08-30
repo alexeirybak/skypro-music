@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-export function VolumeBlock() {
+export const VolumeBlock = () => {
   return (
     <S.BarVolumeBlock>
       <S.VolumeContent>

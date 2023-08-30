@@ -1,8 +1,8 @@
-import { BarPlayer } from '../BarPlayerBlock/BarPlayer';
-import { VolumeBlock } from '../VolumeBlockBlock/VolumeBlock';
+import { BarPlayer } from '../BarPlayerBlock';
+import { VolumeBlock } from '../VolumeBlockBlock';
 import * as S from './styles';
 
-export function Player({ isLoading }) {
+export const Player = ({ isLoading }) => {
   return (
     <S.Bar>
       <S.BarContent>

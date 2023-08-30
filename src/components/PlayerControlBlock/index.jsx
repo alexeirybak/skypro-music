@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-export function PlayerControls() {
+export const PlayerControls = () => {
   return (
     <S.PlayerControls>
       <S.PlayerBtnPrev>

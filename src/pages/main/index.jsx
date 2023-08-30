@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { NavTrackSidebar } from '../../components/NavTrackSidebarBlock/NavTrackSidebar';
-import { Player } from '../../components/PlayerBlock/Player';
-import { Footer } from '../../components/FooterBlock/Footer';
+import { NavTrackSidebar } from '../../components/NavTrackSidebarBlock';
+import { Player } from '../../components/PlayerBlock';
+import { Footer } from '../../components/FooterBlock';
 import * as S from './styles';
 
 export const Main = () => {

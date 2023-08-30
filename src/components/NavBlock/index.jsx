@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { SwitchTheme } from '../SwitchThemeBlock/SwitchTheme';
+import { SwitchTheme } from '../SwitchThemeBlock';
 import cn from 'classnames';
 import './index.css';
 import * as S from './styles';
 
-export function Nav() {
+export const Nav = ({ onAuthButtonClick }) => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const menuAppear = () => {
@@ -106,7 +106,9 @@ export function Nav() {
           </S.MenuItem>
           <S.MenuItem>
             <NavLink to='/login'>
-              <S.MenuLink href='../signin.html'>Выйти</S.MenuLink>
+              <S.MenuLink href='../signin.html' onClick={onAuthButtonClick}>
+                Выйти
+              </S.MenuLink>
             </NavLink>
           </S.MenuItem>
         </S.MenuList>

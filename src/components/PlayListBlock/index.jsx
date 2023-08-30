@@ -1,7 +1,7 @@
 import { Data } from '../../constants';
 import * as S from './styles';
 
-export function PlayList({ isLoading }) {
+export const PlayList = ({ isLoading }) => {
   const fullPlayList = Data.map((item, i) => {
     const { trackTitleLink, trackAuthorLink, trackAlbumLink, trackTimeText } =
       item;

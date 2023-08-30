@@ -1,6 +1,6 @@
 import * as S from './styles';
 
-export function PlayerTrackPlay({ isLoading }) {
+export const PlayerTrackPlay = ({ isLoading }) => {
   return (
     <S.PlayerTrackPlay>
       <S.TrackPlayerContain>

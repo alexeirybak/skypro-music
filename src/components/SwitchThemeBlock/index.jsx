@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import '../../styles/global.js';
-import * as S from './styles';
+import * as S from './styles.js';
 
-export function SwitchTheme() {
+export const SwitchTheme = () => {
   const [currentTheme, setCurrentTheme] = useState('dark');
 
-  function changeTheme() {
+  const changeTheme = () => {
     if (currentTheme === 'dark') {
       document.documentElement.setAttribute('data-theme', 'light');
       localStorage.setItem('theme', 'light');
