@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -72,10 +73,12 @@ const BtnMixin = css`
   letter-spacing: -0.054px;
   font-variant-numeric: lining-nums proportional-nums;
   border-radius: 6px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const ModalButtonEnter = styled.button`
+export const ModalButtonEnter = styled(NavLink)`
   ${BtnMixin};
   background-color: #580ea2;
   height: 52px;
@@ -95,8 +98,8 @@ export const ModalBtnSignup = styled.button`
   width: 278px;
   height: 52px;
   border: 1px solid #d0cece;
-  background-color: ${({ $status }) => ($status ? '#580ea2' : '#fff')};
-  color: ${({ $status }) => ($status ? '#fff' : '#000')};
+  background-color: #fff;
+  color: #000;
 
   &:hover {
     background-color: #3f007d;

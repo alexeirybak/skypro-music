@@ -19,7 +19,7 @@ export const Login = ({ onAuthButtonClick }) => {
               />
             </S.ModalFormLoginInput>
             <S.ModalFormLoginButtons>
-              <S.ModalButtonEnter onClick={onAuthButtonClick}>
+              <S.ModalButtonEnter onClick={onAuthButtonClick} to='/'>
                 Войти
               </S.ModalButtonEnter>
               <NavLink to='/register'>

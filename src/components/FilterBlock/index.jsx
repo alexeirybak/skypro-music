@@ -7,44 +7,28 @@ export const Filter = () => {
   const yearList = [...new Set(Data.map((item) => item.year))];
   const genreList = [...new Set(Data.map((item) => item.genre))];
 
-  const [isAuthorMenuOpen, setIsAuthorMenuOpen] = useState(false);
-  const [isYearMenuOpen, setIsYearMenuOpen] = useState(false);
-  const [isGenreMenuOpen, setIsGenreMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState('');
 
-  const toggleAuthorMenu = () => {
-    setIsAuthorMenuOpen(!isAuthorMenuOpen);
-    setIsYearMenuOpen(false);
-    setIsGenreMenuOpen(false);
-  };
-
-  const toggleYearMenu = () => {
-    setIsYearMenuOpen(!isYearMenuOpen);
-    setIsAuthorMenuOpen(false);
-    setIsGenreMenuOpen(false);
-  };
-
-  const toggleGenreMenu = () => {
-    setIsGenreMenuOpen(!isGenreMenuOpen);
-    setIsAuthorMenuOpen(false);
-    setIsYearMenuOpen(false);
+  const toggleMenu = (menuName) => {
+    setOpenMenu((prevMenu) => (prevMenu === menuName ? '' : menuName));
   };
 
   return (
-    <S.CenterblockFilter>
+    <S.CenterBlockFilter>
       <S.FilterTitle>Искать по:</S.FilterTitle>
       <S.FilterList>
         <S.FilterButton
-          as={isAuthorMenuOpen && S.BtnTextActive}
-          onClick={toggleAuthorMenu}
+          as={openMenu === 'author' && S.BtnTextActive}
+          onClick={() => toggleMenu('author')}
         >
           исполнителю
         </S.FilterButton>
-        {isAuthorMenuOpen ? (
+        {openMenu === 'author' ? (
           <S.FilterCounter>{authorList.length}</S.FilterCounter>
         ) : (
           ''
         )}
-        <S.FilterContent $isAuthorMenuOpen={isAuthorMenuOpen}>
+        <S.FilterContent $isAuthorMenuOpen={openMenu === 'author'}>
           <S.FilterBlock>
             <S.FilterListMenu>
               {authorList.map((item) => (
@@ -58,17 +42,17 @@ export const Filter = () => {
       </S.FilterList>
       <S.FilterList>
         <S.FilterButton
-          as={isYearMenuOpen && S.BtnTextActive}
-          onClick={toggleYearMenu}
+          as={openMenu === 'year' && S.BtnTextActive}
+          onClick={() => toggleMenu('year')}
         >
           году выпуска
         </S.FilterButton>
-        {isYearMenuOpen ? (
+        {openMenu === 'year' ? (
           <S.FilterCounter>{yearList.length}</S.FilterCounter>
         ) : (
           ''
         )}
-        <S.FilterContentYear $isYearMenuOpen={isYearMenuOpen}>
+        <S.FilterContentYear $isYearMenuOpen={openMenu === 'year'}>
           <S.FilterBlock>
             <S.FilterListMenuYear>
               {yearList.map((item) => (
@@ -82,17 +66,17 @@ export const Filter = () => {
       </S.FilterList>
       <S.FilterList>
         <S.FilterButton
-          as={isGenreMenuOpen && S.BtnTextActive}
-          onClick={toggleGenreMenu}
+          as={openMenu === 'genre' && S.BtnTextActive}
+          onClick={() => toggleMenu('genre')}
         >
           жанру
         </S.FilterButton>
-        {isGenreMenuOpen ? (
+        {openMenu === 'genre' ? (
           <S.FilterCounter>{genreList.length}</S.FilterCounter>
         ) : (
           ''
         )}
-        <S.FilterContentGenre $isGenreMenuOpen={isGenreMenuOpen}>
+        <S.FilterContentGenre $isGenreMenuOpen={openMenu === 'genre'}>
           <S.FilterBlock>
             <S.FilterListMenu>
               {genreList.map((item) => (
@@ -104,6 +88,6 @@ export const Filter = () => {
           </S.FilterBlock>
         </S.FilterContentGenre>
       </S.FilterList>
-    </S.CenterblockFilter>
+    </S.CenterBlockFilter>
   );
-}
+};

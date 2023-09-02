@@ -1,22 +1,18 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { SwitchTheme } from '../SwitchThemeBlock';
-import cn from 'classnames';
-import './index.css';
 import * as S from './styles';
 
 export const Nav = () => {
   const [menuVisible, setMenuVisible] = useState(false);
 
-const handleLogout = () => {
-  localStorage.setItem('user', 'false');
-};
+  const handleLogout = () => {
+    localStorage.setItem('user', 'false');
+  };
 
   const menuAppear = () => {
     setMenuVisible(!menuVisible);
   };
-
-  const activeClassName = 'underline';
 
   return (
     <S.MainNav>
@@ -85,39 +81,27 @@ const handleLogout = () => {
       <S.MenuContent $menuVisible={menuVisible}>
         <S.MenuList>
           <S.MenuItem>
-            <NavLink
-              to='/'
-              className={({ isActive }) =>
-                cn({
-                  [activeClassName]: isActive,
-                })
-              }
-            >
-              <S.MenuLink href='#'>Главное</S.MenuLink>
-            </NavLink>
+            <S.MenuLink to='/' href='#'>
+              Главное
+            </S.MenuLink>
           </S.MenuItem>
           <S.MenuItem>
-            <NavLink
-              to='/favourites'
-              className={({ isActive }) =>
-                cn({
-                  [activeClassName]: isActive,
-                })
-              }
-            >
-              <S.MenuLink href='#'>Мой плейлист</S.MenuLink>
-            </NavLink>
+            <S.MenuLink to='/favourites' href='#'>
+              Мой плейлист
+            </S.MenuLink>
           </S.MenuItem>
           <S.MenuItem>
-            <NavLink to='/login'>
-              <S.MenuLink href='../signin.html' onClick={handleLogout}>
-                Выйти
-              </S.MenuLink>
-            </NavLink>
+            <S.MenuLink
+              to='/login'
+              href='../signin.html'
+              onClick={handleLogout}
+            >
+              Выйти
+            </S.MenuLink>
           </S.MenuItem>
         </S.MenuList>
       </S.MenuContent>
       <SwitchTheme />
     </S.MainNav>
   );
-}
+};

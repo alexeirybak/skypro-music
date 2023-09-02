@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const CenterblockFilter = styled.div`
+export const CenterBlockFilter = styled.div`
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;

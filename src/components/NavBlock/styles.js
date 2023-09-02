@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const MainNav = styled.nav`
   width: 244px;
@@ -47,7 +48,9 @@ export const BurgerLine = styled.span`
 export const MenuContent = styled.div`
   max-height: 0;
   overflow: hidden;
-  transition: 0.5s ease max-height;
+  transition:
+    background-color 0.5s ease,
+    max-height 0.5s ease;
   background-color: var(--main-nav);
   z-index: 1;
   max-height: ${({ $menuVisible }) => ($menuVisible ? '220px' : '0')};
@@ -66,9 +69,31 @@ export const MenuItem = styled.li`
   margin-bottom: 16px;
 `;
 
-export const MenuLink = styled.p`
+export const MenuLink = styled(NavLink)`
   color: var(--main-text);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ad61ff;
+    transition:
+      width 0.3s ease,
+      left 0.3s ease;
+  }
+
+  &:hover::before,
+  &:active::before,
+  &.active::before {
+    left: 0;
+    width: 100%;
+  }
 `;

@@ -5,6 +5,7 @@ import * as S from './styles.js';
 
 export const SwitchTheme = () => {
   const [currentTheme, setCurrentTheme] = useState('dark');
+  const [rotate, setRotate] = useState(false);
 
   const changeTheme = () => {
     if (currentTheme === 'dark') {
@@ -16,7 +17,8 @@ export const SwitchTheme = () => {
       localStorage.setItem('theme', 'dark');
       setCurrentTheme('dark');
     }
-  }
+    setRotate(!rotate);
+  };
 
   useEffect(() => {
     if (localStorage.getItem('theme') === 'light') {
@@ -41,6 +43,7 @@ export const SwitchTheme = () => {
         <S.SwitcherBlock>
           {currentTheme === 'dark' ? (
             <S.SwitcherSwitcher
+              rotate={rotate}
               xmlns='http://www.w3.org/2000/svg'
               width='40'
               height='40'
@@ -104,4 +107,4 @@ export const SwitchTheme = () => {
       </S.SwitcherSwitcherLabel>
     </S.SwitcherLabel>
   );
-}
+};
