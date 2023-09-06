@@ -1,11 +1,17 @@
 import { useState } from 'react';
-import { Data } from '../../constants';
+import { releaseDateFormatter } from '../../utils/releaseDateFormatter';
 import * as S from './styles';
 
-export const Filter = () => {
-  const authorList = [...new Set(Data.map((item) => item.trackAuthorLink))];
-  const yearList = [...new Set(Data.map((item) => item.year))];
-  const genreList = [...new Set(Data.map((item) => item.genre))];
+export const Filter = ({ music }) => {
+  const formattedAuthorList = [
+    ...new Set(
+      music.map((item) => (item.author === '-' ? 'Неизвестный' : item.author)),
+    ),
+  ];
+  const formattedYearList = releaseDateFormatter([
+    ...new Set(music.map((item) => item.release_date)),
+  ]);
+  const genreList = [...new Set(music.map((item) => item.genre))];
 
   const [openMenu, setOpenMenu] = useState('');
 
@@ -24,14 +30,14 @@ export const Filter = () => {
           исполнителю
         </S.FilterButton>
         {openMenu === 'author' ? (
-          <S.FilterCounter>{authorList.length}</S.FilterCounter>
+          <S.FilterCounter>{formattedAuthorList.length}</S.FilterCounter>
         ) : (
           ''
         )}
         <S.FilterContent $isAuthorMenuOpen={openMenu === 'author'}>
           <S.FilterBlock>
             <S.FilterListMenu>
-              {authorList.map((item) => (
+              {formattedAuthorList.map((item) => (
                 <S.FilterListMenuItem key={item}>
                   <S.FilterListMenuLink href='#'>{item}</S.FilterListMenuLink>
                 </S.FilterListMenuItem>
@@ -48,14 +54,14 @@ export const Filter = () => {
           году выпуска
         </S.FilterButton>
         {openMenu === 'year' ? (
-          <S.FilterCounter>{yearList.length}</S.FilterCounter>
+          <S.FilterCounter>{formattedYearList.length}</S.FilterCounter>
         ) : (
           ''
         )}
         <S.FilterContentYear $isYearMenuOpen={openMenu === 'year'}>
           <S.FilterBlock>
             <S.FilterListMenuYear>
-              {yearList.map((item) => (
+              {formattedYearList.map((item) => (
                 <S.FilterListMenuItem key={item}>
                   <S.FilterListMenuLink href='#'>{item}</S.FilterListMenuLink>
                 </S.FilterListMenuItem>

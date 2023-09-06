@@ -1,4 +1,4 @@
-export const Data = [
+export const tracks = [
   {
     trackTitleLink: {
       title: 'Guilt',

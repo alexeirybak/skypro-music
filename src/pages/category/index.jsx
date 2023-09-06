@@ -10,7 +10,7 @@ export function Category() {
   return (
     <S.CategoryBlock>
       <h1>CategoryPage {category.id}</h1>
-      <img src={category.imgUrl} alt="" />
+      <img src={category.imgUrl} alt={category.alt} />
     </S.CategoryBlock>
   );
 }

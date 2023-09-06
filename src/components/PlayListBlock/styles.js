@@ -32,7 +32,7 @@ export const TrackTitle = styled.div`
   width: 447px;
 `;
 
-export const TrackTitleComponent = styled.div``
+export const TrackTitleComponent = styled.div``;
 
 export const TrackTitleImage = styled.svg`
   width: 51px;
@@ -135,7 +135,12 @@ export const TrackAlbumLink = styled.a`
   color: var(--play-list-title);
 `;
 
-export const TrackTimeComponent = styled.div``
+export const TrackTimeComponent = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+`;
 
 export const TrackTimeSvg = styled.svg`
   width: 14px;

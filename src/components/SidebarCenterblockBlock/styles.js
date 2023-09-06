@@ -71,7 +71,7 @@ export const Col04 = styled.div`
   ${PlaylistTitleColMixin};
 `;
 
-export const PlaylisTitleSvg = styled.svg`
+export const PlaylistTitleSvg = styled.svg`
   circle {
     fill: transparent;
     stroke: var(--play-list-title);
@@ -80,4 +80,14 @@ export const PlaylisTitleSvg = styled.svg`
     fill: transparent;
     stroke: var(--play-list-title);
   }
+`;
+
+export const ErrorMessage = styled.p`
+  font-size: 24px;
+  color: red;
+`;
+
+export const Img = styled.img`
+  margin-top: 30px;
+  max-width: 200px;
 `;

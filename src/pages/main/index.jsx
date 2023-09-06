@@ -4,7 +4,7 @@ import { Player } from '../../components/PlayerBlock';
 import { Footer } from '../../components/FooterBlock';
 import * as S from './styles';
 
-export const Main = () => {
+export const Main = ({ music, getTracksError }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,11 @@ export const Main = () => {
   return (
     <S.Wrapper>
       <S.Container>
-        <NavTrackSidebar isLoading={isLoading}/>
+        <NavTrackSidebar
+          isLoading={isLoading}
+          music={music}
+          getTracksError={getTracksError}
+        />
         <Player isLoading={isLoading} />
         <Footer />
       </S.Container>

@@ -1,10 +1,14 @@
-import { Data } from '../../constants';
+import { durationFormatter } from './../../utils/durationFormatter';
+// import { tracks } from '../../constants';
 import * as S from './styles';
+// import { getAllTracks } from '../../api';
 
-export const PlayList = ({ isLoading }) => {
-  const fullPlayList = Data.map((item, i) => {
-    const { trackTitleLink, trackAuthorLink, trackAlbumLink, trackTimeText } =
-      item;
+export const PlayList = ({ isLoading, music }) => {
+
+  const fullPlayList = music.map((item, i) => {
+    const { name, author, album, duration_in_seconds } = item;
+    const updatedAuthor = author === "-" ? "Неизвестный" : author;
+
     return (
       <S.PlaylistItem key={i}>
         <S.PlaylistTrack>
@@ -42,13 +46,9 @@ export const PlayList = ({ isLoading }) => {
                 <S.SkeletonIcon></S.SkeletonIcon>
               )}
             </S.TrackTitleComponent>
-
             <S.TrackTitleBlock>
               {isLoading ? (
-                <S.TrackTitleLink href='http://'>
-                  {trackTitleLink.title}
-                  <span>{trackTitleLink?.remark}</span>
-                </S.TrackTitleLink>
+                <S.TrackTitleLink>{name}</S.TrackTitleLink>
               ) : (
                 <S.SkeletonTrackTitle></S.SkeletonTrackTitle>
               )}
@@ -57,18 +57,14 @@ export const PlayList = ({ isLoading }) => {
 
           <S.TrackAuthor>
             {isLoading ? (
-              <S.TrackAuthorLink href='http://'>
-                {trackAuthorLink}
-              </S.TrackAuthorLink>
+              <S.TrackAuthorLink>{updatedAuthor}</S.TrackAuthorLink>
             ) : (
               <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}
           </S.TrackAuthor>
           <S.TrackAlbum>
             {isLoading ? (
-              <S.TrackAlbumLink href='http://'>
-                {trackAlbumLink}
-              </S.TrackAlbumLink>
+              <S.TrackAlbumLink>{album}</S.TrackAlbumLink>
             ) : (
               <S.SkeletonTrackAuthor></S.SkeletonTrackAuthor>
             )}
@@ -86,11 +82,13 @@ export const PlayList = ({ isLoading }) => {
                 stroke='#B1B1B1'
               />
             </S.TrackTimeSvg>
-            <S.TrackTimeText>{trackTimeText}</S.TrackTimeText>
+            <S.TrackTimeText>
+              {durationFormatter(duration_in_seconds)}
+            </S.TrackTimeText>
           </S.TrackTimeComponent>
         </S.PlaylistTrack>
       </S.PlaylistItem>
     );
   });
   return <S.ContentPlayList>{fullPlayList}</S.ContentPlayList>;
-}
+};
