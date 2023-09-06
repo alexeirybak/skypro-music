@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { releaseDateFormatter } from '../../utils/releaseDateFormatter';
 import * as S from './styles';
 
-export const Filter = ({ music }) => {
+export const Filter = ({ isLoading, error, music }) => {
   const formattedAuthorList = [
     ...new Set(
       music.map((item) => (item.author === '-' ? 'Неизвестный' : item.author)),
@@ -26,6 +26,7 @@ export const Filter = ({ music }) => {
         <S.FilterButton
           as={openMenu === 'author' && S.BtnTextActive}
           onClick={() => toggleMenu('author')}
+          disabled={error || !isLoading}
         >
           исполнителю
         </S.FilterButton>
@@ -50,6 +51,7 @@ export const Filter = ({ music }) => {
         <S.FilterButton
           as={openMenu === 'year' && S.BtnTextActive}
           onClick={() => toggleMenu('year')}
+          disabled={error || !isLoading}
         >
           году выпуска
         </S.FilterButton>
@@ -74,6 +76,7 @@ export const Filter = ({ music }) => {
         <S.FilterButton
           as={openMenu === 'genre' && S.BtnTextActive}
           onClick={() => toggleMenu('genre')}
+          disabled={error || !isLoading}
         >
           жанру
         </S.FilterButton>

@@ -10,15 +10,19 @@ function App() {
   const initialUserState = localStorage.getItem('user') === 'true';
   const [user, setUser] = useState(initialUserState);
   const [music, setMusic] = useState([]);
-  const [getTracksError, setGetTracksError] = useState(null);
+  const [error, setError] = useState(null);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchTracks() {
       try {
         const tracks = await getAllTracks();
         setMusic(tracks);
+        setIsLoading(true);
       } catch (error) {
-        setGetTracksError('Не удалось загрузить плейлист, попробуйте позже');
+        setIsLoading(true);
+        setError(error.message);
       }
     }
     fetchTracks();
@@ -34,9 +38,10 @@ function App() {
       <GlobalStyle />
       <AppRoutes
         user={user}
+        isLoading={isLoading}
         music={music}
         onAuthButtonClick={handleLogin}
-        getTracksError={getTracksError}
+        error={error}
       />
     </>
   );

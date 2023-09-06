@@ -4,25 +4,15 @@ import { Player } from '../../components/PlayerBlock';
 import { Footer } from '../../components/FooterBlock';
 import * as S from './styles';
 
-export const Main = ({ music, getTracksError }) => {
-  const [isLoading, setIsLoading] = useState(false);
+export const Main = ({ isLoading, music, error }) => {
 
-  useEffect(() => {
-    if (!isLoading) {
-      const timeout = setTimeout(() => {
-        setIsLoading(true);
-      }, 2000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [isLoading]);
   return (
     <S.Wrapper>
       <S.Container>
         <NavTrackSidebar
           isLoading={isLoading}
           music={music}
-          getTracksError={getTracksError}
+          error={error}
         />
         <Player isLoading={isLoading} />
         <Footer />

@@ -10,8 +10,9 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 export const AppRoutes = ({
   user,
   onAuthButtonClick,
+  isLoading,
   music,
-  getTracksError,
+  error,
 }) => {
   return (
     <Routes>
@@ -20,8 +21,9 @@ export const AppRoutes = ({
           path='/'
           element={
             <Main
+              isLoading={isLoading}
               music={music}
-              getTracksError={getTracksError}
+              error={error}
             />
           }
         />

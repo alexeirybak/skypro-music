@@ -27,7 +27,10 @@ export const FilterList = styled.div`
   position: relative;
 `;
 
-export const FilterButton = styled.div`
+export const FilterButton = styled.button`
+  background-color: var(--container);
+  transition: background-color 0.5s ease;
+  color: var(--main-text);
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -154,9 +157,9 @@ export const FilterListMenu = styled.ul`
   height: 237px;
 `;
 
-export const FilterListMenuItem = styled.li``
+export const FilterListMenuItem = styled.li``;
 
-export const FilterListMenuLink = styled.a``
+export const FilterListMenuLink = styled.a``;
 
 export const FilterListMenuYear = styled.ul`
   ${FilterListMixin};

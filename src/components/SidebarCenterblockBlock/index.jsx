@@ -3,12 +3,12 @@ import { Filter } from '../FilterBlock';
 import { Search } from '../SearchBlock';
 import * as S from './styles';
 
-export const SidebarCenterBlock = ({ isLoading, music, getTracksError }) => {
+export const SidebarCenterBlock = ({ isLoading, music, error }) => {
   return (
     <S.MainCenterBlock>
       <Search />
       <S.CenterBlockH2>Треки</S.CenterBlockH2>
-      <Filter music={music} getTracksError={getTracksError} />
+      <Filter music={music} error={error} isLoading={isLoading}/>
       <S.CenterBlockContent>
         <S.ContentTitle>
           <S.Col01>Трек</S.Col01>
@@ -27,8 +27,8 @@ export const SidebarCenterBlock = ({ isLoading, music, getTracksError }) => {
             </S.PlaylistTitleSvg>
           </S.Col04>
         </S.ContentTitle>
-        {getTracksError ? (
-          <><S.ErrorMessage>{getTracksError}</S.ErrorMessage><S.Img src='/img/404.gif' /></>
+        {error ? (
+          <><S.ErrorMessage>Не удалось загрузить плейлист, попробуйте позже: {error}</S.ErrorMessage><S.Img src='/img/404.gif' /></>
         ) : (
           isLoading && <PlayList isLoading={isLoading} music={music} />
         )}
