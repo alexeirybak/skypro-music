@@ -9,10 +9,10 @@ setTheme();
 function App() {
   const initialUserState = localStorage.getItem('user') === 'true';
   const [user, setUser] = useState(initialUserState);
+  const [isLoading, setIsLoading] = useState(false);
   const [music, setMusic] = useState([]);
   const [error, setError] = useState(null);
-
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     async function fetchTracks() {
@@ -40,6 +40,8 @@ function App() {
         user={user}
         isLoading={isLoading}
         music={music}
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
         onAuthButtonClick={handleLogin}
         error={error}
       />

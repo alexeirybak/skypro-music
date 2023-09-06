@@ -12,6 +12,8 @@ export const AppRoutes = ({
   onAuthButtonClick,
   isLoading,
   music,
+  isPlaying,
+  setIsPlaying,
   error,
 }) => {
   return (
@@ -23,6 +25,8 @@ export const AppRoutes = ({
             <Main
               isLoading={isLoading}
               music={music}
+              isPlaying={isPlaying}
+              setIsPlaying={setIsPlaying}
               error={error}
             />
           }

@@ -1,13 +1,15 @@
-import { durationFormatter } from './../../utils/durationFormatter';
-// import { tracks } from '../../constants';
+import { durationFormatter } from '../../utils/durationFormatter';
+import { tracks } from '../../constants';
 import * as S from './styles';
-// import { getAllTracks } from '../../api';
 
 export const PlayList = ({ isLoading, music }) => {
+  if (!isLoading) {
+    music = [...Array(12)].flatMap(() => tracks);
+  }
 
   const fullPlayList = music.map((item, i) => {
     const { name, author, album, duration_in_seconds } = item;
-    const updatedAuthor = author === "-" ? "Неизвестный" : author;
+    const updatedAuthor = author === '-' ? 'Неизвестный' : author;
 
     return (
       <S.PlaylistItem key={i}>
@@ -90,5 +92,6 @@ export const PlayList = ({ isLoading, music }) => {
       </S.PlaylistItem>
     );
   });
+
   return <S.ContentPlayList>{fullPlayList}</S.ContentPlayList>;
 };

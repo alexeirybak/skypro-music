@@ -1,10 +1,15 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { useLocalStorage } from './../../utils/useLocalStorage';
+import { detectDarkMode } from '../../utils/detectDarkMode';
 import '../../styles/global.js';
 import * as S from './styles.js';
 
 export const SwitchTheme = () => {
-  const [currentTheme, setCurrentTheme] = useState('dark');
+  const [currentTheme, setCurrentTheme] = useLocalStorage(
+    'dark',
+    detectDarkMode(),
+  );
   const [rotate, setRotate] = useState(false);
 
   const changeTheme = () => {
@@ -43,7 +48,7 @@ export const SwitchTheme = () => {
         <S.SwitcherBlock>
           {currentTheme === 'dark' ? (
             <S.SwitcherSwitcher
-              rotate="rotate"
+              rotate='rotate'
               xmlns='http://www.w3.org/2000/svg'
               width='40'
               height='40'

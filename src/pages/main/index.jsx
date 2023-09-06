@@ -1,20 +1,14 @@
-import { useState, useEffect } from 'react';
-import { NavTrackSidebar } from '../../components/NavTrackSidebarBlock';
-import { Player } from '../../components/PlayerBlock';
-import { Footer } from '../../components/FooterBlock';
+import { NavTrackSidebar } from '../../components/NavTrackSidebar';
+import { Player } from '../../components/Player';
+import { Footer } from '../../components/Footer';
 import * as S from './styles';
 
-export const Main = ({ isLoading, music, error }) => {
-
+export const Main = ({ isLoading, music, error, isPlaying, setIsPlaying }) => {
   return (
     <S.Wrapper>
       <S.Container>
-        <NavTrackSidebar
-          isLoading={isLoading}
-          music={music}
-          error={error}
-        />
-        <Player isLoading={isLoading} />
+        <NavTrackSidebar isLoading={isLoading} music={music} error={error} />
+        {isPlaying && <Player isLoading={isLoading} />}
         <Footer />
       </S.Container>
     </S.Wrapper>

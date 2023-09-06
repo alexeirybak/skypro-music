@@ -2,8 +2,6 @@ import styled, { css } from 'styled-components';
 
 export const MainCenterBlock = styled.div`
   width: auto;
-  -webkit-box-flex: 3;
-  -ms-flex-positive: 3;
   flex-grow: 3;
   padding: 20px 40px 20px 111px;
 `;
@@ -18,24 +16,14 @@ export const CenterBlockH2 = styled.h2`
 `;
 
 export const CenterBlockContent = styled.div`
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
 `;
 
 export const ContentTitle = styled.div`
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 24px;
 `;
@@ -82,9 +70,15 @@ export const PlaylistTitleSvg = styled.svg`
   }
 `;
 
+export const ErrorBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const ErrorMessage = styled.p`
   font-size: 24px;
-  color: red;
+  color: #ad61ff;
 `;
 
 export const Img = styled.img`

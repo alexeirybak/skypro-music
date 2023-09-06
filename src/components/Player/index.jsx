@@ -1,5 +1,5 @@
-import { BarPlayer } from '../BarPlayerBlock';
-import { VolumeBlock } from '../VolumeBlockBlock';
+import { BarPlayer } from '../BarPlayer';
+import { VolumeBlock } from '../VolumeBlock';
 import * as S from './styles';
 
 export const Player = ({ isLoading }) => {

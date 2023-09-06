@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { SwitchTheme } from '../SwitchThemeBlock';
+import { SwitchTheme } from '../SwitchTheme';
 import * as S from './styles';
 
 export const Nav = () => {
