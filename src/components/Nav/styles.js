@@ -16,12 +16,6 @@ export const NavLogo = styled.div`
   margin-bottom: 20px;
 `;
 
-export const LogoImage = styled.svg`
-  width: 113.33px;
-  height: 17px;
-  color: var(--logo-img);
-`;
-
 export const NavBurger = styled.div`
   width: 20px;
   height: 36px;
@@ -29,11 +23,7 @@ export const NavBurger = styled.div`
   margin-bottom: 20px;
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   cursor: pointer;
 `;
@@ -54,10 +44,6 @@ export const MenuContent = styled.div`
   background-color: var(--main-nav);
   z-index: 1;
   max-height: ${({ $menuVisible }) => ($menuVisible ? '220px' : '0')};
-`;
-
-export const LogoLetters = styled.path`
-  fill: var(--logo-letters);
 `;
 
 export const MenuList = styled.ul`

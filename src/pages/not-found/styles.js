@@ -21,3 +21,11 @@ export const Sign = styled.h1`
   color: var(--main-content);
   text-align: center;
 `;
+
+export const GoToMain = styled.p`
+  background-color: #ad61ff;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 6px;
+  box-sizing: border-box;
+`;

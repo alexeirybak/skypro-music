@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { musicCategory } from '../../constants';
-import { PersonIcon } from '../../utils/iconSVG/personIcon';
+import { PersonIcon } from '../../utils/iconSVG/personalIcon';
 import * as S from './styles';
 
 export const MainSidebar = ({ isLoading }) => {

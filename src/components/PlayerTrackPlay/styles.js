@@ -3,19 +3,14 @@ import styled, { css, keyframes } from 'styled-components';
 export const PlayerTrackPlay = styled.div`
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
 `;
 
 export const TrackPlayerContain = styled.div`
   width: auto;
   display: grid;
-  -ms-grid-columns: auto 1fr;
   grid-template-columns: auto 1fr;
   grid-template-areas: 'image author' 'image album';
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 `;
 
@@ -25,32 +20,15 @@ export const TrackPlayerImage = styled.div`
   background-color: var(--title-track-img);
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-right: 12px;
   grid-row: 1;
-  -ms-grid-row-span: 2;
   grid-column: 1;
   grid-area: image;
 `;
 
 export const TrackPlayerBlock = styled.div``
-
-export const TrackPlaySvg = styled.svg`
-  rect {
-    fill: var(--track-title-svg-bg);
-  }
-  path {
-    stroke: var(--play-list-title);
-  }
-  ellipse {
-    stroke: var(--play-list-title);
-  }
-`;
 
 const blink = keyframes`
     from {
@@ -124,11 +102,7 @@ export const TrackPlayAlbumLink = styled.a`
 export const TrackPlayLikesDisplay = styled.div`
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-left: 26%;
 `;
@@ -153,32 +127,4 @@ export const TrackPlayLike = styled.div`
 
 export const TrackPlayDislike = styled(TrackPlayLike)`
   margin-left: 28.5px;
-`;
-
-const PathPlayLikesMixin = css`
-  width: 14px;
-  fill: transparent;
-  path {
-    fill: var(--container);
-    stroke: var(--player-btn-repeat-shuffle);
-  }
-  &:hover path {
-    stroke: var(--player-btn-repeat-shuffle-hover);
-  }
-  &:active path {
-    fill: var(--like-active-fill);
-    stroke: var(--like-active-stroke);
-  }
-`;
-
-export const TrackPlayLikeSvg = styled.svg`
-  height: 12px;
-  stroke: var(--play-list-title);
-  ${PathPlayLikesMixin}
-`;
-
-export const TrackPlayDislikeSvg = styled.svg`
-  height: 13px;
-  stroke: #696969;
-  ${PathPlayLikesMixin}
 `;

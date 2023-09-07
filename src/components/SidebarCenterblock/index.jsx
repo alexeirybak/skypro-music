@@ -1,6 +1,7 @@
 import { PlayList } from '../PlayList';
 import { Filter } from '../Filter';
-import { Search } from '../SearchBlock';
+import { Search } from '../Search';
+import { PlayListTitleSvg } from '../../utils/iconSVG/playerListTitle';
 import * as S from './styles';
 
 export const SidebarCenterBlock = ({ isLoading, music, error }) => {
@@ -15,16 +16,7 @@ export const SidebarCenterBlock = ({ isLoading, music, error }) => {
           <S.Col02>ИСПОЛНИТЕЛЬ</S.Col02>
           <S.Col03>АЛЬБОМ</S.Col03>
           <S.Col04>
-            <S.PlaylistTitleSvg
-              xmlns='http://www.w3.org/2000/svg'
-              width='12'
-              height='13'
-              viewBox='0 0 12 13'
-              fill='none'
-            >
-              <circle cx='6' cy='6.75098' r='5.5' stroke='#4E4E4E' />
-              <path d='M4 6.75098H6.5V3.25098' stroke='#4E4E4E' />
-            </S.PlaylistTitleSvg>
+            <PlayListTitleSvg/>
           </S.Col04>
         </S.ContentTitle>
         {error ? (

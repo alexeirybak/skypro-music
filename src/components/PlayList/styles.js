@@ -142,16 +142,6 @@ export const TrackTimeComponent = styled.div`
   flex-wrap: nowrap;
 `;
 
-export const TrackTimeSvg = styled.svg`
-  width: 14px;
-  height: 12px;
-  margin-right: 17px;
-  fill: transparent;
-  path {
-    stroke: var(--play-list-title);
-  }
-`;
-
 export const TrackTimeText = styled.span`
   font-style: normal;
   font-weight: 400;

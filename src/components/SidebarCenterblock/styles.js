@@ -59,17 +59,6 @@ export const Col04 = styled.div`
   ${PlaylistTitleColMixin};
 `;
 
-export const PlaylistTitleSvg = styled.svg`
-  circle {
-    fill: transparent;
-    stroke: var(--play-list-title);
-  }
-  path {
-    fill: transparent;
-    stroke: var(--play-list-title);
-  }
-`;
-
 export const ErrorBlock = styled.div`
   display: flex;
   flex-direction: column;
