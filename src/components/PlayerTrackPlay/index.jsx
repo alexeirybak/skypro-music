@@ -3,14 +3,20 @@ import { TrackPlayLikeSvg } from '../../utils/iconSVG/trackPlayLike';
 import { TrackPlayDislikeSvg } from '../../utils/iconSVG/trackPlayDislike';
 import * as S from './styles';
 
-export const PlayerTrackPlay = ({ isLoading }) => {
+export const PlayerTrackPlay = ({
+  isLoading,
+  currentTrack,
+  setCurrentTrack,
+}) => {
+  console.log(currentTrack);
+
   return (
     <S.PlayerTrackPlay>
       <S.TrackPlayerContain>
         {isLoading ? (
           <S.TrackPlayerImage>
             <S.TrackPlayerBlock>
-              <TrackPlaySvg/>
+              <TrackPlaySvg />
             </S.TrackPlayerBlock>
           </S.TrackPlayerImage>
         ) : (
@@ -19,7 +25,7 @@ export const PlayerTrackPlay = ({ isLoading }) => {
         {isLoading ? (
           <S.TrackPlayAuthor>
             <S.TrackPlayAuthorLink href='http://'>
-              Ты та...
+              {currentTrack.name}
             </S.TrackPlayAuthorLink>
           </S.TrackPlayAuthor>
         ) : (
@@ -27,9 +33,7 @@ export const PlayerTrackPlay = ({ isLoading }) => {
         )}
         {isLoading ? (
           <S.TrackPlayAlbum>
-            <S.TrackPlayAlbumLink href='http://'>
-              Баста
-            </S.TrackPlayAlbumLink>
+            <S.TrackPlayAlbumLink href='http://'>{currentTrack.author}</S.TrackPlayAlbumLink>
           </S.TrackPlayAlbum>
         ) : (
           <S.SceletonAlbum></S.SceletonAlbum>
@@ -37,12 +41,12 @@ export const PlayerTrackPlay = ({ isLoading }) => {
       </S.TrackPlayerContain>
       <S.TrackPlayLikesDisplay>
         <S.TrackPlayLike>
-          <TrackPlayLikeSvg/>
+          <TrackPlayLikeSvg />
         </S.TrackPlayLike>
         <S.TrackPlayDislike>
-          <TrackPlayDislikeSvg/>
+          <TrackPlayDislikeSvg />
         </S.TrackPlayDislike>
       </S.TrackPlayLikesDisplay>
     </S.PlayerTrackPlay>
   );
-}
+};

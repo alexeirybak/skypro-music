@@ -15,7 +15,7 @@ export const tracks = [
   //   name: 'I’m Fire',
   //   author: 'Ali Bakgor',
   //   album: 'I’m Fire',
-  //   duration_in_seconds: 222,
+  //   duration_in_seconds: 333,
   // },
   // {
   //   name: 'Non Stop',

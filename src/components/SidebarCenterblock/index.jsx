@@ -4,7 +4,15 @@ import { Search } from '../Search';
 import { PlayListTitleSvg } from '../../utils/iconSVG/playerListTitle';
 import * as S from './styles';
 
-export const SidebarCenterBlock = ({ isLoading, music, error }) => {
+export const SidebarCenterBlock = ({
+  isLoading,
+  music,
+  error,
+  isPlaying,
+  setIsPlaying,
+  currentTrack,
+  setCurrentTrack,
+}) => {
   return (
     <S.MainCenterBlock>
       <Search />
@@ -16,7 +24,7 @@ export const SidebarCenterBlock = ({ isLoading, music, error }) => {
           <S.Col02>ИСПОЛНИТЕЛЬ</S.Col02>
           <S.Col03>АЛЬБОМ</S.Col03>
           <S.Col04>
-            <PlayListTitleSvg/>
+            <PlayListTitleSvg />
           </S.Col04>
         </S.ContentTitle>
         {error ? (
@@ -27,7 +35,14 @@ export const SidebarCenterBlock = ({ isLoading, music, error }) => {
             <S.Img src='/img/404.gif' />
           </S.ErrorBlock>
         ) : (
-          <PlayList isLoading={isLoading} music={music} />
+          <PlayList
+            isLoading={isLoading}
+            music={music}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
+            currentTrack={currentTrack}
+            setCurrentTrack={setCurrentTrack}
+          />
         )}
       </S.CenterBlockContent>
     </S.MainCenterBlock>

@@ -4,23 +4,32 @@ import { TrackTitleSvg } from '../../utils/iconSVG/trackTitle';
 import { TrackTimeSvg } from '../../utils/iconSVG/trackTime';
 import * as S from './styles';
 
-export const PlayList = ({ isLoading, music }) => {
+export const PlayList = ({
+  isLoading,
+  music,
+  setIsPlaying,
+  setCurrentTrack,
+}) => {
   if (!isLoading) {
     music = [...Array(12)].flatMap(() => tracks);
   }
+
+  const handleTrackClick = (item) => {
+    setCurrentTrack(item);
+    setIsPlaying(true);
+  };
 
   const fullPlayList = music.map((item, i) => {
     const { name, author, album, duration_in_seconds } = item;
     const updatedAuthor = author === '-' ? 'Неизвестный' : author;
 
     return (
-      <S.PlaylistItem key={i}>
+      <S.PlaylistItem key={i} onClick={() => handleTrackClick(item)}>
         <S.PlaylistTrack>
           <S.TrackTitle>
             <S.TrackTitleComponent>
               {isLoading ? (
-                <TrackTitleSvg/>
-                  
+                <TrackTitleSvg />
               ) : (
                 <S.SkeletonIcon></S.SkeletonIcon>
               )}
@@ -49,7 +58,7 @@ export const PlayList = ({ isLoading, music }) => {
             )}
           </S.TrackAlbum>
           <S.TrackTimeComponent>
-            <TrackTimeSvg/>
+            <TrackTimeSvg />
             <S.TrackTimeText>
               {durationFormatter(duration_in_seconds)}
             </S.TrackTimeText>

@@ -14,6 +14,8 @@ export const AppRoutes = ({
   music,
   isPlaying,
   setIsPlaying,
+  currentTrack,
+  setCurrentTrack,
   error,
 }) => {
   return (
@@ -27,6 +29,8 @@ export const AppRoutes = ({
               music={music}
               isPlaying={isPlaying}
               setIsPlaying={setIsPlaying}
+              currentTrack={currentTrack}
+              setCurrentTrack={setCurrentTrack}
               error={error}
             />
           }
@@ -39,7 +43,7 @@ export const AppRoutes = ({
         element={<Login onAuthButtonClick={onAuthButtonClick} />}
       />
       <Route path='/register' element={<Register />} />
-      <Route path='*' element={<NotFound />} />
+      <Route path='*' element={<NotFound isLoading={isLoading}/>} />
     </Routes>
   );
 };

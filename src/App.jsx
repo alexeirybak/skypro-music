@@ -13,6 +13,7 @@ function App() {
   const [music, setMusic] = useState([]);
   const [error, setError] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrack, setCurrentTrack] = useState(null);
 
   useEffect(() => {
     async function fetchTracks() {
@@ -42,6 +43,8 @@ function App() {
         music={music}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
+        currentTrack={currentTrack}
+        setCurrentTrack={setCurrentTrack}
         onAuthButtonClick={handleLogin}
         error={error}
       />
