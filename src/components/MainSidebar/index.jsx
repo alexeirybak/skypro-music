@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { SidebarPersonal } from '../SidebarPersonal';
 import { SidebarPlayLists } from '../SidebarPlayLists';
 
