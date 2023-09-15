@@ -3,7 +3,6 @@ import { releaseDateFormatter } from '../../utils/releaseDateFormatter';
 import * as S from './styles';
 
 export const Filter = ({ isLoading, error, music }) => {
-  console.log(error);
   const formattedAuthorList = [
     ...new Set(
       music.map((item) => (item.author === '-' ? 'Неизвестный' : item.author)),
