@@ -21,6 +21,7 @@ function App() {
         const tracks = await getAllTracks();
         setMusic(tracks);
         setIsLoading(true);
+        setError(false);
       } catch (error) {
         setIsLoading(true);
         setError(error.message);
