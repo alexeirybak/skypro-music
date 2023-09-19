@@ -4,9 +4,8 @@ import * as S from './styles';
 
 export const ProgressBar = ({
   currentTime,
-  setCurrentTime,
   duration,
-  setDuration,
+  onSeek,
 }) => {
   const [progressPercentage, setProgressPercentage] = useState(0);
 
@@ -16,13 +15,14 @@ export const ProgressBar = ({
     }
   }, [currentTime, duration]);
 
-  const handleProgressBarClick = (event) => {
-    const progressBar = event.currentTarget;
-    const boundingRect = progressBar.getBoundingClientRect();
-    const offsetX = event.clientX - boundingRect.left;
-    const width = boundingRect.width;
-    const newTime = (offsetX / width) * duration;
-    setCurrentTime(newTime);
+  const handleClick = (e) => {
+    const progressBarWidth = e.target.clientWidth;
+    const clickPosition = e.nativeEvent.offsetX;
+    const newTime = (clickPosition / progressBarWidth) * duration;
+
+    if (onSeek) {
+      onSeek(newTime);
+    }
   };
 
   return (
@@ -32,7 +32,7 @@ export const ProgressBar = ({
         <S.TimerData> / </S.TimerData>
         <S.TimerData>{durationFormatter(duration)}</S.TimerData>
       </S.Timer>
-      <S.ProgressBarWrapper onClick={(event) => handleProgressBarClick(event)}>
+      <S.ProgressBarWrapper onClick={handleClick}>
         <S.ProgressBar style={{ width: `${progressPercentage}%` }} />
       </S.ProgressBarWrapper>
     </>

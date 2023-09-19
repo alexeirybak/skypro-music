@@ -14,14 +14,12 @@ export const PlayerControls = ({
   trackId,
   isPlaying,
   setIsPlaying,
-  currentTime,
   setCurrentTime,
   setDuration,
   audioRef,
 }) => {
-
   const [isLoop, setIsLoop] = useState(false);
-  
+
   useEffect(() => {
     async function fetchTrack() {
       try {
@@ -58,12 +56,6 @@ export const PlayerControls = ({
   const notUsed = () => {
     alert('Еще не реализовано');
   };
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.currentTime = currentTime;
-    }
-  }, [currentTime]);
 
   const handleTimeUpdate = () => {
     setCurrentTime(audioRef.current.currentTime);

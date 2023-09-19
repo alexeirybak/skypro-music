@@ -14,6 +14,13 @@ export const Player = ({
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
+
+  const handleSeek = (newTime) => {
+    setCurrentTime(newTime);
+    if (audioRef && audioRef.current) {
+      audioRef.current.currentTime = newTime;
+    }
+  };
  
   return (
     <S.Bar>
@@ -25,6 +32,7 @@ export const Player = ({
           setCurrentTime={setCurrentTime}
           duration={duration}
           setDuration={setDuration}
+          onSeek={handleSeek}
         />
         <S.BarPlayerBlock>
           <BarPlayer
