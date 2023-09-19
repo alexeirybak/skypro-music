@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Timer = styled.div`
   display: flex;
@@ -17,9 +17,17 @@ export const ProgressBarWrapper = styled.div`
   background-color: #d9d9d9;
   position: relative;
   cursor: pointer;
+  ${({ playing }) =>
+    playing &&
+    css`
+      &:hover {
+        height: 8px;
+      }
+    `}
 `;
 
 export const ProgressBar = styled.div`
-  height: 5px;
+  height: 100%;
   background-color: #b672ff;
+  border-radius: 3px;
 `;

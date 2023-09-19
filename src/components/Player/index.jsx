@@ -22,7 +22,7 @@ export const Player = ({
       audioRef.current.currentTime = newTime;
     }
   };
- 
+
   return (
     <S.Bar>
       <S.BarContent>
@@ -34,6 +34,7 @@ export const Player = ({
           duration={duration}
           setDuration={setDuration}
           onSeek={handleSeek}
+          isPlaying={isPlaying}
         />
         <S.BarPlayerBlock>
           <BarPlayer
@@ -49,7 +50,11 @@ export const Player = ({
             audioRef={audioRef}
             volume={volume}
           />
-          <VolumeBlock audioRef={audioRef} volume={volume} setVolume={setVolume} />
+          <VolumeBlock
+            audioRef={audioRef}
+            volume={volume}
+            setVolume={setVolume}
+          />
         </S.BarPlayerBlock>
       </S.BarContent>
     </S.Bar>

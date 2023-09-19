@@ -6,6 +6,7 @@ export const ProgressBar = ({
   currentTime,
   duration,
   onSeek,
+  isPlaying
 }) => {
   const [progressPercentage, setProgressPercentage] = useState(0);
 
@@ -32,8 +33,8 @@ export const ProgressBar = ({
         <S.TimerData> / </S.TimerData>
         <S.TimerData>{durationFormatter(duration)}</S.TimerData>
       </S.Timer>
-      <S.ProgressBarWrapper onClick={handleClick}>
-        <S.ProgressBar style={{ width: `${progressPercentage}%` }} />
+      <S.ProgressBarWrapper onClick={handleClick} playing={isPlaying}>
+        <S.ProgressBar style={{ width: `${progressPercentage}%` }}/>
       </S.ProgressBarWrapper>
     </>
   );
