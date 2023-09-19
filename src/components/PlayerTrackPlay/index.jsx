@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
 import { getTrackById } from '../../api';
 import { TrackPlaySvg } from '../../utils/iconSVG/trackPlay';
@@ -12,19 +12,7 @@ export const PlayerTrackPlay = ({
   currentTrack,
   setCurrentTrack,
 }) => {
-  useEffect(() => {
-    async function fetchTrack() {
-      try {
-        const track = await getTrackById(trackId);
-        setCurrentTrack(track);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    fetchTrack();
-  }, [trackId]);
-  console.log(currentTrack);
+  
 
   return (
     <S.PlayerTrackPlay>
@@ -61,14 +49,6 @@ export const PlayerTrackPlay = ({
           <TrackPlayDislikeSvg />
         </S.TrackPlayDislike>
       </S.TrackPlayLikesDisplay>
-      {isLoading ? (
-        <ReactAudioPlayer
-          src={currentTrack.track_file}
-          autoPlay
-          controls
-          className='audio-player'
-        />
-      ) : null}
     </S.PlayerTrackPlay>
   );
 };

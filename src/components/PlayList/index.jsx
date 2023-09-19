@@ -8,6 +8,7 @@ export const PlayList = ({
   isLoading,
   music,
   setIsPlaying,
+  setIsBar,
   setCurrentTrack,
 }) => {
   if (!isLoading) {
@@ -17,6 +18,7 @@ export const PlayList = ({
   const handleTrackClick = (item) => {
     setCurrentTrack(item);
     setIsPlaying(true);
+    setIsBar(true);
   };
 
   const fullPlayList = music.map((item, i) => {

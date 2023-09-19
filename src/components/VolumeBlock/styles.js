@@ -28,12 +28,15 @@ export const VolumeImage = styled.div`
   width: 13px;
   height: 18px;
   margin-right: 17px;
+  position: relative;
+  cursor: pointer;
 `;
 
 export const VolumeSvg = styled.svg`
   width: 13px;
   height: 18px;
   fill: transparent;
+  
 `;
 
 export const VolumeProgress = styled.div`
@@ -44,4 +47,13 @@ export const VolumeProgress = styled.div`
 export const VolumeProgressLine = styled.input`
   width: 109px;
   cursor: pointer;
+`;
+
+export const MutedText = styled.p`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0; 
+  font-size: 18px;
 `;

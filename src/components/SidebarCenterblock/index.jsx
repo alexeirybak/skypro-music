@@ -8,8 +8,8 @@ export const SidebarCenterBlock = ({
   isLoading,
   music,
   error,
-  isPlaying,
   setIsPlaying,
+  setIsBar,
   currentTrack,
   setCurrentTrack,
 }) => {
@@ -38,8 +38,8 @@ export const SidebarCenterBlock = ({
           <PlayList
             isLoading={isLoading}
             music={music}
-            isPlaying={isPlaying}
             setIsPlaying={setIsPlaying}
+            setIsBar={setIsBar}
             currentTrack={currentTrack}
             setCurrentTrack={setCurrentTrack}
           />

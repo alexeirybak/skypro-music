@@ -68,6 +68,7 @@ body {
   --player-btn-hover: #696969;
   --player-btn-repeat-shuffle: #696969;
   --player-btn-repeat-shuffle-hover: #acacac;
+  --player-btn-repeat-shuffle-active: #fff;
   --like-active-fill: #696969;
   --like-active-stroke: #fff;
   --scrollbar: #4b4949;
@@ -98,6 +99,7 @@ body {
   --player-btn-hover: #707070;
   --player-btn-repeat-shuffle: #b1b1b1;
   --player-btn-repeat-shuffle-hover: #707070;
+  --player-btn-repeat-shuffle-active: #000;
   --like-active-fill: #ad61ff;
   --like-active-stroke: #ad61ff;
   --scrollbar: #d9d9d9;
