@@ -26,6 +26,8 @@ export const ProgressBar = ({
     }
   };
 
+  const heightOnHover = isPlaying ? '8px' : '5px';
+
   return (
     <>
       <S.Timer>
@@ -33,7 +35,7 @@ export const ProgressBar = ({
         <S.TimerData> / </S.TimerData>
         <S.TimerData>{durationFormatter(duration)}</S.TimerData>
       </S.Timer>
-      <S.ProgressBarWrapper onClick={handleClick} playing={isPlaying}>
+      <S.ProgressBarWrapper onClick={handleClick} $playing={isPlaying}>
         <S.ProgressBar style={{ width: `${progressPercentage}%` }}/>
       </S.ProgressBarWrapper>
     </>

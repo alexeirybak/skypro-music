@@ -13,17 +13,13 @@ export const TimerData = styled.p``;
 
 export const ProgressBarWrapper = styled.div`
   width: 100%;
-  height: 5px;
+  height: ${({ $playing }) => ($playing ? '5px' : '8px')};
   background-color: #d9d9d9;
   position: relative;
   cursor: pointer;
-  ${({ playing }) =>
-    playing &&
-    css`
-      &:hover {
-        height: 8px;
-      }
-    `}
+  &:hover {
+    height: ${({ $playing }) => ($playing ? '8px' : '5px')};
+  }
 `;
 
 export const ProgressBar = styled.div`
