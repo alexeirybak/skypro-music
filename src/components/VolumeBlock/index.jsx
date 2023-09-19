@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import * as S from './styles';
 
-export const VolumeBlock = ({ audioRef }) => {
-  const [volume, setVolume] = useState(0.5);
+export const VolumeBlock = ({ audioRef, volume, setVolume }) => {
+
   const [muted, setMuted] = useState(false);
 
   useEffect(() => {

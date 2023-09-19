@@ -12,7 +12,8 @@ export const BarPlayer = ({
   setCurrentTime,
   duration,
   setDuration,
-  audioRef
+  audioRef,
+  volume
 }) => {
   return (
     <S.BarPlayer>
@@ -26,6 +27,7 @@ export const BarPlayer = ({
         duration={duration}
         setDuration={setDuration}
         audioRef={audioRef}
+        volume={volume}
       />
       <PlayerTrackPlay
         isLoading={isLoading}

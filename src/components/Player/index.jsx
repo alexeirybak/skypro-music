@@ -14,6 +14,7 @@ export const Player = ({
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(null);
+  const [volume, setVolume] = useState(0.5);
 
   const handleSeek = (newTime) => {
     setCurrentTime(newTime);
@@ -46,8 +47,9 @@ export const Player = ({
             duration={duration}
             setDuration={setDuration}
             audioRef={audioRef}
+            volume={volume}
           />
-          <VolumeBlock currentTrack={currentTrack} audioRef={audioRef} />
+          <VolumeBlock audioRef={audioRef} volume={volume} setVolume={setVolume} />
         </S.BarPlayerBlock>
       </S.BarContent>
     </S.Bar>

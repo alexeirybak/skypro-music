@@ -17,6 +17,7 @@ export const PlayerControls = ({
   setCurrentTime,
   setDuration,
   audioRef,
+  volume
 }) => {
   const [isLoop, setIsLoop] = useState(false);
 
@@ -52,6 +53,12 @@ export const PlayerControls = ({
   const toggleLoop = () => {
     setIsLoop(!isLoop);
   };
+
+  useEffect(() => {
+    if (audioRef && audioRef.current) {
+      audioRef.current.volume = volume;
+    }
+  }, [currentTrack.track_file, audioRef, volume]);
 
   const notUsed = () => {
     alert('Еще не реализовано');
