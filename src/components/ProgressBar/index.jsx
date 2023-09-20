@@ -26,8 +26,6 @@ export const ProgressBar = ({
     }
   };
 
-  const heightOnHover = isPlaying ? '8px' : '5px';
-
   return (
     <>
       <S.Timer>
