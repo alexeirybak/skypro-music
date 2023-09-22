@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
-import { Login } from './pages/login';
-import { Register } from './pages/register';
+import { LogPage } from './pages/logPage';
+import { RegPage } from './pages/regPage';
 import { Main } from './pages/main';
 import { Favourites } from './pages/favourites';
 import { Category } from './pages/category';
@@ -9,7 +9,6 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 
 export const AppRoutes = ({
   user,
-  onAuthButtonClick,
   isLoading,
   music,
   isPlaying,
@@ -39,10 +38,10 @@ export const AppRoutes = ({
         <Route path='/category/:id' element={<Category />} />
       </Route>
       <Route
-        path='/login'
-        element={<Login onAuthButtonClick={onAuthButtonClick} />}
+        path='/register'
+        element={<RegPage />}
       />
-      <Route path='/register' element={<Register />} />
+      <Route path='/login' element={<LogPage />} />
       <Route path='*' element={<NotFound isLoading={isLoading}/>} />
     </Routes>
   );

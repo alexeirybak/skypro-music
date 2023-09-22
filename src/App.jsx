@@ -2,13 +2,11 @@ import { useState, useEffect } from 'react';
 import { AppRoutes } from './routes';
 import { setTheme } from './utils/theme';
 import { GlobalStyle } from './styles/global';
-import { getAllTracks } from './api';
+import { getAllTracks } from './api/apiGetAllTracks';
 
 setTheme();
 
-function App() {
-  const initialUserState = localStorage.getItem('user') === 'true';
-  const [user, setUser] = useState(initialUserState);
+const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [music, setMusic] = useState([]);
   const [error, setError] = useState(null);
@@ -30,23 +28,17 @@ function App() {
     fetchTracks();
   }, []);
 
-  const handleLogin = () => {
-    localStorage.setItem('user', 'true');
-    setUser(true);
-  };
 
   return (
     <>
       <GlobalStyle />
       <AppRoutes
-        user={user}
         isLoading={isLoading}
         music={music}
         isPlaying={isPlaying}
         setIsPlaying={setIsPlaying}
         currentTrack={currentTrack}
         setCurrentTrack={setCurrentTrack}
-        onAuthButtonClick={handleLogin}
         error={error}
       />
     </>

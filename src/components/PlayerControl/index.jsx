@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getTrackById } from '../../api';
+import { getTrackById } from '../../api/apiGetTrackById';
 import { PlayerBtnPrevSvg } from '../../utils/iconSVG/playerBtnPrev';
 import { PlayerBtnPlaySvg } from '../../utils/iconSVG/playerBtnPlay';
 import { PlayerBtnPauseSvg } from '../../utils/iconSVG/playerBtnPause';
