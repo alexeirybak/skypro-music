@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
+import { UserContext } from './contexts/UserContext';
 import { AppRoutes } from './routes';
 import { setTheme } from './utils/theme';
-import { GlobalStyle } from './styles/global';
 import { getAllTracks } from './api/apiGetAllTracks';
+import { GlobalStyle } from './styles/global';
 
 setTheme();
 
 const App = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
   const [isLoading, setIsLoading] = useState(false);
   const [music, setMusic] = useState([]);
   const [error, setError] = useState(null);
@@ -28,21 +30,28 @@ const App = () => {
     fetchTracks();
   }, []);
 
+  const handleLogin = () => {
+    localStorage.setItem('user', 'true');
+    setUser(true);
+  };
 
   return (
     <>
       <GlobalStyle />
-      <AppRoutes
-        isLoading={isLoading}
-        music={music}
-        isPlaying={isPlaying}
-        setIsPlaying={setIsPlaying}
-        currentTrack={currentTrack}
-        setCurrentTrack={setCurrentTrack}
-        error={error}
-      />
+      <UserContext.Provider value={{ user, setUser }}>
+        <AppRoutes
+          onAuthButtonClick={handleLogin}
+          isLoading={isLoading}
+          music={music}
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}
+          currentTrack={currentTrack}
+          setCurrentTrack={setCurrentTrack}
+          error={error}
+        />
+      </UserContext.Provider>
     </>
   );
-}
+};
 
 export default App;

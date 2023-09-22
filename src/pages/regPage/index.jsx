@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RegUser } from '../../api/registerUser';
+import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 
 export function RegPage() {
@@ -10,6 +11,8 @@ export function RegPage() {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [primaryButton, setPrimaryButton] = useState(false);
   const [isLoginMode, setIsLoginMode] = useState(false);
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const isLoginModeFromStorage = JSON.parse(
@@ -25,9 +28,9 @@ export function RegPage() {
       try {
         const result = await RegUser(email, password);
         setPrimaryButton(true);
-        console.log(result);
         localStorage.setItem('isLoginMode', JSON.stringify(true));
         setIsLoginMode(true);
+        navigate('/login');
       } catch (error) {
         setError(error.message);
       } finally {
@@ -36,7 +39,6 @@ export function RegPage() {
     }
   };
 
-  // Сбрасываем ошибку если пользователь меняет данные на форме или меняется режим формы
   useEffect(() => {
     setError(null);
   }, [isLoginMode, email, password, repeatPassword]);

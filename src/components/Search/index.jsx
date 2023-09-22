@@ -3,6 +3,7 @@ import { IconSearchHandleSvg } from '../../utils/iconSVG/iconSearchHandle';
 import * as S from './styles';
 
 export const Search = () => {
+
   return (
     <S.CenterBlockSearch>
       <S.Glass>
