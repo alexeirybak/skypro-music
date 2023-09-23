@@ -9,6 +9,7 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 
 export const AppRoutes = ({
   user,
+  onAuthButtonClick,
   isLoading,
   music,
   isPlaying,
@@ -41,7 +42,8 @@ export const AppRoutes = ({
         path='/register'
         element={<RegPage />}
       />
-      <Route path='/login' element={<LogPage />} />
+      <Route path='/login' element={<LogPage onAuthButtonClick={onAuthButtonClick}/>} 
+      />
       <Route path='*' element={<NotFound isLoading={isLoading}/>} />
     </Routes>
   );

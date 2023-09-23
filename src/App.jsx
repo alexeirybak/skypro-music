@@ -8,7 +8,9 @@ import { GlobalStyle } from './styles/global';
 setTheme();
 
 const App = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem('user')) || null,
+  );
   const [isLoading, setIsLoading] = useState(false);
   const [music, setMusic] = useState([]);
   const [error, setError] = useState(null);
@@ -40,6 +42,7 @@ const App = () => {
       <GlobalStyle />
       <UserContext.Provider value={{ user, setUser }}>
         <AppRoutes
+          user={user}
           onAuthButtonClick={handleLogin}
           isLoading={isLoading}
           music={music}

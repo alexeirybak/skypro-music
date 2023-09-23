@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 import { Link } from 'react-router-dom';
 import { RegUser } from '../../api/registerUser';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +13,6 @@ export function RegPage() {
   const [primaryButton, setPrimaryButton] = useState(false);
   const [isLoginMode, setIsLoginMode] = useState(false);
   const navigate = useNavigate();
-  
 
   useEffect(() => {
     const isLoginModeFromStorage = JSON.parse(
@@ -21,6 +21,8 @@ export function RegPage() {
     setIsLoginMode(isLoginModeFromStorage || false);
   }, []);
 
+  const { setUser } = useContext(UserContext);
+
   const handleRegister = async () => {
     if (password !== repeatPassword) {
       setError('Пароли не совпадают');
@@ -28,14 +30,21 @@ export function RegPage() {
       try {
         const result = await RegUser(email, password);
         setPrimaryButton(true);
-        localStorage.setItem('isLoginMode', JSON.stringify(true));
+        setUser(result.username);
+        localStorage.setItem('user', JSON.stringify(result.username));
         setIsLoginMode(true);
-        navigate('/login');
+        navigate('/');
       } catch (error) {
         setError(error.message);
       } finally {
         setPrimaryButton(false);
       }
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleRegister();
     }
   };
 
@@ -62,6 +71,7 @@ export function RegPage() {
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
+              onKeyDown={handleKeyDown}
             />
             <S.ModalInput
               type='password'
@@ -71,6 +81,7 @@ export function RegPage() {
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
+              onKeyDown={handleKeyDown}
             />
             <S.ModalInput
               type='password'
@@ -80,6 +91,7 @@ export function RegPage() {
               onChange={(event) => {
                 setRepeatPassword(event.target.value);
               }}
+              onKeyDown={handleKeyDown}
             />
           </S.Inputs>
           {error && <S.Error>{error}</S.Error>}

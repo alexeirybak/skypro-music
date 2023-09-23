@@ -27,12 +27,18 @@ export function LogPage() {
       const result = await LogUser(email, password);
       setPrimaryButton(true);
       setUser(result.username);
-      localStorage.setItem("user", JSON.stringify(result.username)); 
-      navigate('/')
+      localStorage.setItem('user', JSON.stringify(result.username));
+      navigate('/');
     } catch (error) {
       setError(error.message);
     } finally {
       setPrimaryButton(false);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleRegister();
     }
   };
 
@@ -58,6 +64,7 @@ export function LogPage() {
               onChange={(event) => {
                 setEmail(event.target.value);
               }}
+              onKeyDown={handleKeyDown}
             />
             <S.ModalInput
               type='password'
@@ -67,6 +74,7 @@ export function LogPage() {
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
+              onKeyDown={handleKeyDown}
             />
           </S.Inputs>
           {error && <S.Error>{error}</S.Error>}
