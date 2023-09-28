@@ -13,7 +13,7 @@ export const TimerData = styled.p``;
 
 export const ProgressBarWrapper = styled.div`
   width: 100%;
-  height: ${({ $playing }) => ($playing ? '5px' : '8px')};
+  height: 5px;
   background-color: #d9d9d9;
   position: relative;
   cursor: pointer;

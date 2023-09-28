@@ -10,30 +10,25 @@ export const PlaylistItem = styled.div`
 export const PlaylistTrack = styled.div`
   display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 `;
 
 export const TrackTitle = styled.div`
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   width: 447px;
 `;
 
-export const TrackTitleComponent = styled.div``;
+export const TrackTitleComponent = styled.div`
+  width: 51px;
+  height: 51px;
+  display: flex;
+  align-items: center;
+  background-color: var(--track-title-svg-bg);
+`;
 
 export const TrackTitleImage = styled.svg`
   width: 51px;
@@ -42,11 +37,7 @@ export const TrackTitleImage = styled.svg`
   background-color: var(--title-track-img);
   display: -webkit-box;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   rect {
     fill: var(--track-title-svg-bg);
@@ -74,6 +65,7 @@ export const SkeletonIcon = styled(TrackTitleImage)`
 `;
 
 export const TrackTitleBlock = styled.div`
+  margin-left: 17px;
   width: 356px;
   height: 19px;
 `;
@@ -110,8 +102,6 @@ export const TrackAuthor = styled.div`
   width: 321px;
   display: -webkit-box;
   display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
 `;
 
@@ -153,10 +143,7 @@ export const TrackTimeText = styled.span`
 `;
 
 export const ContentPlayList = styled.div`
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
   flex-direction: column;
   overflow-y: auto;
 `;

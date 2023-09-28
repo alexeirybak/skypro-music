@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { Link } from 'react-router-dom';
-import { LogUser } from '../../api/loginUser';
+import { LogUser } from '../../api/authApi';
 import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 
@@ -38,7 +38,7 @@ export function LogPage() {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      handleRegister();
+      handleLogin();
     }
   };
 

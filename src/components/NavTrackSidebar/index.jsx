@@ -11,11 +11,13 @@ export const NavTrackSidebar = ({
   setIsBar,
   currentTrack,
   setCurrentTrack,
+  pause,
 }) => {
   return (
     <S.NavTrackSidebar>
       <Nav />
       <SidebarCenterBlock
+        pause={pause}
         isLoading={isLoading}
         music={music}
         setIsPlaying={setIsPlaying}

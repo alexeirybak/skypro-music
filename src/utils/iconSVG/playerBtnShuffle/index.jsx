@@ -1,8 +1,8 @@
 import * as S from './styles';
 
-export const PlayerBtnShuffleSvg = () => {
+export const PlayerBtnShuffleSvg = ({shuffleTrackEnable}) => {
   return (
-    <S.PlayerBtnShuffleImg
+    <S.PlayerBtnShuffleImg $shuffleTrackEnable={shuffleTrackEnable}
       xmlns='http://www.w3.org/2000/svg'
       width='20'
       height='19'

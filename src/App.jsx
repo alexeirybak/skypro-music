@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { UserContext } from './contexts/UserContext';
 import { AppRoutes } from './routes';
 import { setTheme } from './utils/theme';
-import { getAllTracks } from './api/apiGetAllTracks';
+import { getAllTracks } from './api/apiGetTracks';
 import { GlobalStyle } from './styles/global';
 
 setTheme();

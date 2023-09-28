@@ -1,7 +1,7 @@
 import { useEffect, useState,useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { Link } from 'react-router-dom';
-import { RegUser } from '../../api/registerUser';
+import { RegUser } from '../../api/authApi';
 import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 

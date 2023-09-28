@@ -18,6 +18,7 @@ export const AppRoutes = ({
   setCurrentTrack,
   error,
 }) => {
+  
   return (
     <Routes>
       <Route element={<ProtectedRoute isAllowed={user} />}>
