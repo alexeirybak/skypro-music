@@ -1,9 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
 
-const animationPaused = css`
-  animation: none;
-`;
-
 export const TrackTitleImg = styled.svg`
   width: 51px;
   height: 51px;
@@ -35,6 +31,10 @@ const bubble_out = keyframes`
   }
 `;
 
+const animationPaused = css`
+  animation-play-state: paused;
+`;
+
 export const PlayingDot = styled.div`
   width: 16px;
   height: 16px;
@@ -42,8 +42,8 @@ export const PlayingDot = styled.div`
   border-radius: 8px;
   display: block;
   animation: ${bubble_out} 0.6s ease-in-out infinite both;
-  ${({ pause }) => pause && animationPaused}
-`;
+  ${({ $pause }) => $pause && animationPaused}`
+;
 
 export const TrackTitleWrapper = styled.div`
   display: inline-block;

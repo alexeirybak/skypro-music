@@ -194,6 +194,13 @@ export const PlayerControls = ({
     setLoaded(false);
   };
 
+  const handlePlay = () => {
+    if (loaded) {
+      setIsPlaying(!isPlaying);
+    }
+    setPause(!isPlaying);
+  };
+
   return (
     <>
       <audio
@@ -212,12 +219,8 @@ export const PlayerControls = ({
           <PlayerBtnPrevSvg alt='Предыдущий трек' />
         </S.PlayerBtnPrev>
         <S.PlayerBtnPlay
-          onClick={() => {
-            if (loaded) {
-              setIsPlaying(!isPlaying);
-            }
-          }}
-          pause={isPlaying ? undefined : ''}
+          onClick={handlePlay}
+          pause={isPlaying ? 'false' : undefined}
         >
           {isPlaying ? (
             <PlayerBtnPauseSvg alt='Пауза' />
