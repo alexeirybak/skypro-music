@@ -102,7 +102,7 @@ export const PlayerControls = ({
         setIsPlaying(false);
         audioRef.current.pause();
         return;
-      } 
+      }
       nextIndex = (currentIndex + 1) % music.length;
       setCurrentIndex(nextIndex);
     }
@@ -137,6 +137,10 @@ export const PlayerControls = ({
       setShuffledTracks([]);
     }
   }, [shuffleTrackEnable]);
+
+  useEffect(() => {
+    setPause(!isPlaying);
+  }, [isPlaying, setPause]);
 
   const handleShuffle = () => {
     if (!shuffleTrackEnable) {
@@ -211,9 +215,9 @@ export const PlayerControls = ({
           onClick={() => {
             if (loaded) {
               setIsPlaying(!isPlaying);
-              setPause(isPlaying);
             }
           }}
+          pause={isPlaying ? undefined : ''}
         >
           {isPlaying ? (
             <PlayerBtnPauseSvg alt='Пауза' />
