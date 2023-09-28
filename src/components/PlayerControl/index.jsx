@@ -102,7 +102,7 @@ export const PlayerControls = ({
         setIsPlaying(false);
         audioRef.current.pause();
         return;
-      }
+      } 
       nextIndex = (currentIndex + 1) % music.length;
       setCurrentIndex(nextIndex);
     }
