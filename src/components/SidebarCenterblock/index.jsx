@@ -3,6 +3,7 @@ import { Filter } from '../Filter';
 import { Search } from '../Search';
 import { PlayListTitleSvg } from '../../utils/iconSVG/playerListTitle';
 import * as S from './styles';
+import { Outlet } from 'react-router-dom';
 
 export const SidebarCenterBlock = ({
   isLoading,
