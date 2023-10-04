@@ -1,5 +1,5 @@
 import { Nav } from '../Nav';
-import { SidebarCenterblock } from '../SidebarCenterblock';
+import { SidebarCenterblock } from '../SidebarCenterBlock';
 import { MainSidebar } from '../MainSidebar';
 import * as S from './styles.js';
 
