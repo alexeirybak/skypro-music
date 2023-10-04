@@ -4,7 +4,7 @@ import { Search } from '../Search';
 import { PlayListTitleSvg } from '../../utils/iconSVG/playerListTitle';
 import * as S from './styles';
 
-export const SidebarCenterBlock = ({
+export const SidebarCenterblock = ({
   isLoading,
   music,
   error,
