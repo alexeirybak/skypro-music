@@ -17,7 +17,6 @@ export const NavTrackSidebar = ({
         {...props}
       />
       <MainSidebar isLoading={isLoading} />
-      
     </S.NavTrackSidebar>
   );
 };
