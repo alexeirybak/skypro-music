@@ -7,7 +7,7 @@ export const NavTrackSidebar = ({
 
   isLoading,
   ...props
-  
+
 }) => {
   return (
     <S.NavTrackSidebar>
@@ -17,6 +17,7 @@ export const NavTrackSidebar = ({
         {...props}
       />
       <MainSidebar isLoading={isLoading} />
+      
     </S.NavTrackSidebar>
   );
 };
