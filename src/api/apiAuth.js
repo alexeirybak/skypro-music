@@ -1,3 +1,5 @@
+import { getToken } from './apiTokens';
+
 export async function RegUser(email, password) {
   return fetch('https://skypro-music-api.skyeng.tech/user/signup/', {
     method: 'POST',

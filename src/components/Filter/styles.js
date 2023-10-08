@@ -1,13 +1,8 @@
 import styled, { css } from 'styled-components';
 
 export const CenterBlockFilter = styled.div`
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
   flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: flex-start;
   margin-bottom: 51px;
   column-gap: 10px;

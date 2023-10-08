@@ -12,11 +12,10 @@ export const Main = ({
   error,
   currentTrack,
   setCurrentTrack,
-  pause,
-  setPause
 }) => {
 
   const [isBar, setIsBar] = useState(false);
+  const [pause, setPause] = useState(false);
   
   return (
     <S.Wrapper>

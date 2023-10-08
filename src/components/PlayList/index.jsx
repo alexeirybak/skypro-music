@@ -1,5 +1,6 @@
 import { durationFormatter } from '../../utils/durationFormatter';
 import { tracks } from '../../constants';
+import { addLike } from '../../api/apiLikes';
 import { TrackTitleSvg } from '../../utils/iconSVG/trackTitle';
 import { TrackTimeSvg } from '../../utils/iconSVG/trackTime';
 import * as S from './styles';
@@ -24,9 +25,13 @@ export const PlayList = ({
   };
 
   const fullPlayList = music.map((item, i) => {
-    const { name, author, album, duration_in_seconds } = item;
+    const { name, author, album, duration_in_seconds, id } = item;
     const updatedAuthor = author === '-' ? 'Неизвестный' : author;
     const isCurrentPlaying = currentTrack && item.id === currentTrack.id;
+
+    const clickLike = async () => {
+    await addLike({token: JSON.parse(localStorage.getItem('token')).access, id});
+    };
 
     return (
       <S.PlaylistItem key={i} onClick={() => handleTrackClick(item)}>
@@ -66,7 +71,7 @@ export const PlayList = ({
             )}
           </S.TrackAlbum>
           <S.TrackTimeComponent>
-            <TrackTimeSvg />
+            <TrackTimeSvg onClick={() => clickLike(id)} />
             <S.TrackTimeText>
               {durationFormatter(duration_in_seconds)}
             </S.TrackTimeText>

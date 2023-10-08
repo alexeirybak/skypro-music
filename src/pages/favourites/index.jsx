@@ -1,43 +1,26 @@
-import { GlobalStyle } from '../../styles/global';
-import { Nav } from '../../components/Nav';
-import { Search } from '../../components/Search';
-import { MainSidebar } from '../../components/MainSidebar';
-import { Player } from '../../components/Player';
+import { useEffect, useState } from 'react';
 import * as S from './styles';
+import { getFavoriteTracks } from '../../api/apiTracksList';
 
-export const Favourites = ({
-  music,
-  isLoading,
-  pause,
-  setPause,
-  isPlaying,
-  setIsPlaying,
-  currentTrack,
-  setCurrentTrack
-}) => {
+export const Favourites = () => {
+  const [favouriteTracks, setFavouriteTracks] = useState([]);
+  useEffect(() => {
+    const fetchResponse = async () => {
+      const res = await getFavoriteTracks(
+        JSON.parse(localStorage.getItem('token')).access
+      );
+      setFavouriteTracks(res);
+    };
+    fetchResponse();
+    console.log(JSON.parse(localStorage.getItem('token')).access);
+  }, []);
+
+  console.log(favouriteTracks);
+
   return (
-    <>
-      <S.Lay>
-        <GlobalStyle />
-        <S.FavouritePlayList>
-          <Nav />
-          <S.CenterBlock >
-            <Search />
-            <S.ComponentHeader>Мои треки</S.ComponentHeader>
-          </S.CenterBlock>
-          <MainSidebar isLoading={isLoading}/>
-        </S.FavouritePlayList>
-        <Player
-          pause={pause}
-          setPause={setPause}
-          music={music}
-          isLoading={isLoading}
-          isPlaying={isPlaying}
-          setIsPlaying={setIsPlaying}
-          currentTrack={currentTrack}
-          setCurrentTrack={setCurrentTrack}
-        />
-      </S.Lay>
-    </>
+    <S.LovelyTracks>
+      <h1>Любимые треки</h1>
+      <p>Привет</p>
+    </S.LovelyTracks>
   );
 };

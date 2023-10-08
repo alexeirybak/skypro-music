@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { LogUser } from '../../api/apiAuth';
 import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
+import { getToken } from '../../api/apiTokens';
 
 export function LogPage() {
   const [error, setError] = useState(null);
@@ -25,6 +26,11 @@ export function LogPage() {
   const handleLogin = async () => {
     try {
       const result = await LogUser(email, password);
+      const token = await getToken({ email, password });
+      console.log(email, password);
+      console.log(token);
+
+      localStorage.setItem('token', JSON.stringify(token));
       setPrimaryButton(true);
       setUser(result.username);
       localStorage.setItem('user', JSON.stringify(result.username));

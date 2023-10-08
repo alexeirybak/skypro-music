@@ -11,6 +11,7 @@ export async function getCategory({ id }) {
 }
 
 export async function getFavoriteTracks(token) {
+  console.log(token)
   const response = await fetch(
     'https://skypro-music-api.skyeng.tech/catalog/track/favorite/all/',
     {
@@ -21,5 +22,6 @@ export async function getFavoriteTracks(token) {
     },
   );
   if (response.status === 401) throw new Error('Токен протух');
+  console.log(222222222)
   return await response.json();
 }
