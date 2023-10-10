@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {
   addPlayTrack,
@@ -22,19 +22,13 @@ function NavMenu() {
     <S.NavMenu>
       <S.MenuList>
         <S.MenuItem>
-          <S.MenuLink to='/'>
-            Главное
-          </S.MenuLink>
+          <S.MenuLink to='/'>Главное</S.MenuLink>
         </S.MenuItem>
         <S.MenuItem>
-          <S.MenuLink to='/favorites'>
-            Мой плейлист
-          </S.MenuLink>
+          <S.MenuLink to='/favorites'>Мой плейлист</S.MenuLink>
         </S.MenuItem>
-        <S.MenuItem>
-          <S.MenuLink type='button' onClick={exit}>
-            Выйти
-          </S.MenuLink>
+        <S.MenuItem onClick={exit} type='button'>
+          Выйти
         </S.MenuItem>
       </S.MenuList>
       <SwitchTheme />

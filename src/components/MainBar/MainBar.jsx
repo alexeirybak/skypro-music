@@ -6,6 +6,7 @@ import * as S from './styles';
 function MainBar({ playTrack }) {
   const audioRef = useRef(null);
   const [repeat, setRepeat] = useState(false);
+  console.log(playTrack);
 
   return (
     <S.Bar>
