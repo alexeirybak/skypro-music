@@ -15,7 +15,7 @@ function SidebarPersonal() {
 
   const exit = () => {
     dispatch(addUser(null));
-    dispatch(addPlayTrack({}));
+    dispatch(addPlayTrack({})); 
     localStorage.clear();
     navigate('/login');
   };
