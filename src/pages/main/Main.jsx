@@ -7,7 +7,7 @@ import getTrackAll from '../../api/Api';
 import addTracks from '../../store/actions/creators/creators';
 import * as S from './styles';
 
-function Main() {
+function Main() { 
   const [getError, setGetError] = useState(null);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
